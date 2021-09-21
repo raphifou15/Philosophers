@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:25:05 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/12 19:41:29 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/21 21:08:13 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	err_msg(int err)
 	return (0);
 }
 
-
 int	check_argv_are_number(int argc, char **argv)
 {
 	int	i;
@@ -51,7 +50,6 @@ int	check_argv_are_number(int argc, char **argv)
 	}
 	return (0);
 }
-
 
 int	check_error(int argc, char **argv)
 {

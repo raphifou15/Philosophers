@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/09/13 01:28:13 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/09/21 20:24:51 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,10 @@ DIR_INC = inc
 SRCS = philosophers.c \
 		error.c \
 		utilities.c \
-		ft_free.c
+		ft_free.c \
+		ft_check.c \
+		routine.c \
+		next.c
 
 OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
 
