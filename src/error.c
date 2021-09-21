@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:25:05 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/12 05:00:02 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/12 19:41:29 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,14 @@ int	err_msg(int err)
 		ft_putstr_err("Error\nNumber of arguments are invalid\n");
 	if (err == 2)
 		ft_putstr_err("Error\nAt least one argument is not a number\n");
+	if (err == 2)
+		ft_putstr_err("Or the number is a negatif.\n");
 	if (err == 3)
-		ft_putstr_err("Error\nIf is start by 0 for me is invalid\n");
+		ft_putstr_err("Error\nIf is start by 0 for me the number is invalid\n");
+	if (err == 4)
+		ft_putstr_err("Error\nMax value that i autorize: 2147483647\n");
+	if (err == 5)
+		ft_putstr_err("Error\nMalloc failled\n");
 	return (0);
 }
 
