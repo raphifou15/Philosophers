@@ -34,11 +34,11 @@ OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
 all:${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} ${FLAGS} ${OBJS} -o ${NAME} -lpthread
+	${CC} ${FLAGS} ${OBJS} -o ${NAME}
 
 ${DIR_OBJ}/%.o: ${DIR_SRC}/%.c
 	[ -d $(DIR_OBJ) ] || mkdir -p $(DIR_OBJ)
-	${CC} $(FLAGS) -I ${DIR_INC} -c $< -o $@ -lpthread
+	${CC} $(FLAGS) -I ${DIR_INC} -c $< -o $@
 
 clean:
 	${RM} ${OBJS}

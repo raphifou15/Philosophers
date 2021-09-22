@@ -94,15 +94,27 @@ int	ft_philosophers(t_data_philo *p)
 	i = -1;
 	while (++i < p->nbr_philo)
 	{
+		
 		if (pthread_create(&p->philo[i].th, NULL, routine,
 				(void *)&p->philo[i]) != 0)
 			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(6));
+		++i;
+	}
+	i = 0;
+	while (++i < p->nbr_philo)
+	{
+		usleep(200);
+		if (pthread_create(&p->philo[i].th, NULL, routine,
+				(void *)&p->philo[i]) != 0)
+			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(6));
+		++i;
 	}
 	i = -1;
 	while (++i < p->nbr_philo)
 	{
 		if (pthread_join(p->philo[i].th, NULL) != 0)
 			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(7));
+		
 	}
 	return (0);
 }

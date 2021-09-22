@@ -68,7 +68,7 @@ int					philo_less_than_1_left(t_philo *p);
 int					philo_less_than_1_right(t_philo *p);
 
 int					check_if_alive(t_philo *p);
-void				ft_check_if_die_during_eating(t_philo *p);
+int					ft_check_if_die_during_eating(t_philo *p);
 void				ft_check_if_die_during_sleeping(t_philo *p);
 
 int					check_error(int argc, char **argv);

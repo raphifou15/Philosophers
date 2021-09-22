@@ -76,7 +76,8 @@ int	start_eating(t_philo *p, int i)
 	pthread_mutex_lock(&p->data->mutex);
 	if (check_if_alive(p) == 1)
 		return (1);
-	ft_check_if_die_during_eating(p);
+	if (ft_check_if_die_during_eating(p) != 0)
+		return (1);
 	p->nbr_eat++;
 	printf("\e[15;33mtimestamp: %ld   ", time_now() - pr->time_begin);
 	printf("%d is eating  nbr_eating: %d\e[0m\n", p->num_philo, p->nbr_eat);
@@ -89,12 +90,14 @@ int	start_eating(t_philo *p, int i)
 	if (i == p->data->nbr_philo)
 		p->data->die = 1;
 	usleep(p->eating * 1000);
+	p->last_meal = time_now();
 	pthread_mutex_lock(&p->data->mutex);
 	if (check_if_alive(p) == 1)
 		return (1);
+	//p->last_meal = time_now();
 	pthread_mutex_unlock(&p->data->mutex);
-	p->last_meal = time_now();
 	next_start_eating(p);
+	//p->last_meal = time_now();
 	return (0);
 }
 
@@ -127,16 +130,18 @@ void	*routine(void *pa)
 	p = (t_philo *)pa;
 	while (p->die >= 0)
 	{
-		if (p->num_philo % 2 == 0)
-		{
-			if (start_take_fork_right(p, -1) == 1)
-				return (NULL);
-		}
-		else
-		{
-			if (start_take_fork_left(p, -1) == 1)
-				return (NULL);
-		}
+		//if (p->num_philo % 2 == 0)
+		//{
+			//if (start_take_fork_right(p, -1) == 1)
+			//	return (NULL);
+			//if (start_take_fork_left(p, -1) == 1)
+			//	return (NULL);
+		//}
+		//else
+		//{
+		if (start_take_fork_right(p, -1) == 1)
+			return (NULL);
+		//}
 		if (start_eating(p, -1) == 1)
 			return (NULL);
 		if (start_sleeping_and_thinking(p) == 1)
