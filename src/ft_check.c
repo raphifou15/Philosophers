@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 19:06:08 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/22 02:33:18 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/22 15:43:57 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ void	ft_check_if_die_during_eating(t_philo *p)
 	die = (unsigned long)p->die;
 	time = (time_now() - p->last_meal);
 	if (time + p->eating >= die)
-		p->eating = die - time + 1;
+	{
+		printf("lala %d\n", p->num_philo);
+		p->eating = die - time;
+	}
 }
 
 void	ft_check_if_die_during_sleeping(t_philo *p)
@@ -56,5 +59,8 @@ void	ft_check_if_die_during_sleeping(t_philo *p)
 	die = (unsigned long)p->die;
 	time = (time_now() - p->last_meal);
 	if (time + p->sleeping >= die)
-		p->sleeping = die - time + 1;
+	{
+		printf("lolo\n");
+		p->sleeping = die - time;
+	}
 }

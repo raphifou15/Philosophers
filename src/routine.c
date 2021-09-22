@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 19:13:52 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/21 22:21:26 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/22 15:22:05 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ int	start_eating(t_philo *p, int i)
 	if (check_if_alive(p) == 1)
 		return (1);
 	ft_check_if_die_during_eating(p);
-	p->last_meal = time_now();
 	p->nbr_eat++;
 	printf("\e[15;33mtimestamp: %ld   ", time_now() - pr->time_begin);
 	printf("%d is eating  nbr_eating: %d\e[0m\n", p->num_philo, p->nbr_eat);
@@ -90,6 +89,11 @@ int	start_eating(t_philo *p, int i)
 	if (i == p->data->nbr_philo)
 		p->data->die = 1;
 	usleep(p->eating * 1000);
+	pthread_mutex_lock(&p->data->mutex);
+	if (check_if_alive(p) == 1)
+		return (1);
+	pthread_mutex_unlock(&p->data->mutex);
+	p->last_meal = time_now();
 	next_start_eating(p);
 	return (0);
 }
