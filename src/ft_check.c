@@ -24,7 +24,7 @@ int	check_if_alive(t_philo *p)
 		pthread_mutex_unlock(&p->data->mutex);
 		return (1);
 	}
-	if ((time_now() - p->last_meal) >= die) 
+	if ((time_now() - p->last_meal) >= die)
 	{
 		printf("\e[15;31mtimestamp: %ld   ", time_now() - p->data->time_begin);
 		printf("%d died\e[0m\n", p->num_philo);
@@ -46,9 +46,8 @@ int	ft_check_if_die_during_eating(t_philo *p)
 	time = (time_now() - p->last_meal);
 	if (time + p->eating > die + 4)
 	{
-		//printf("lala %d\n", p->num_philo);
 		p->eating = (die + 4) - time;
-			p->nbr_eat++;
+		p->nbr_eat++;
 		printf("\e[15;33mtimestamp: %ld   ", time_now() - p->data->time_begin);
 		printf("%d is eating  nbr_eating: %d\e[0m\n", p->num_philo, p->nbr_eat);
 		usleep(p->eating * 1000);
@@ -59,16 +58,22 @@ int	ft_check_if_die_during_eating(t_philo *p)
 	return (0);
 }
 
-void	ft_check_if_die_during_sleeping(t_philo *p)
+int	ft_check_if_die_during_sleeping(t_philo *p)
 {
 	unsigned long	time;
 	unsigned long	die;
 
 	die = (unsigned long)p->die;
 	time = (time_now() - p->last_meal);
-	if (time + p->sleeping > die + 4) 
+	if (time + p->sleeping > die + 4)
 	{
-		//printf("lolo\n");
 		p->sleeping = (die + 4) - time;
+		printf("\e[1;36mtimestamp: %ld   ", time_now() - p->data->time_begin);
+		printf("%d is sleeping\e[0m\n", p->num_philo);
+		usleep(p->sleeping * 1000);
+		check_if_alive(p);
+		pthread_mutex_unlock(&p->data->mutex);
+		return (1);
 	}
+	return (0);
 }

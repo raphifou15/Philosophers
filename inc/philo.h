@@ -55,21 +55,19 @@ int					main(int argc, char *argv[]);
 int					init_philo(t_data_philo *p, char **argv);
 int					init_philo_part2(t_data_philo *p);
 void				init_philo_part3(t_data_philo *p);
-int					ft_philosophers(t_data_philo *p);
+int					ft_philosophers(t_data_philo *p, int i);
 
 void				*routine(void *pa);
 int					start_take_fork_right(t_philo *p, int i);
-int					start_take_fork_left(t_philo *p, int i);
 int					start_eating(t_philo *p, int i);
 int					start_sleeping_and_thinking(t_philo *p);
 
 void				next_start_eating(t_philo *p);
-int					philo_less_than_1_left(t_philo *p);
 int					philo_less_than_1_right(t_philo *p);
 
 int					check_if_alive(t_philo *p);
 int					ft_check_if_die_during_eating(t_philo *p);
-void				ft_check_if_die_during_sleeping(t_philo *p);
+int					ft_check_if_die_during_sleeping(t_philo *p);
 
 int					check_error(int argc, char **argv);
 int					check_argv_are_number(int argc, char **argv);

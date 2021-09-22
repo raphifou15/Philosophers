@@ -83,18 +83,14 @@ void	init_philo_part3(t_data_philo *p)
 	}
 }
 
-int	ft_philosophers(t_data_philo *p)
+int	ft_philosophers(t_data_philo *p, int i)
 {
-	int	i;
-
-	i = -1;
 	p->time_begin = time_now();
 	while (++i < p->nbr_philo)
 		p->philo[i].last_meal = time_now();
 	i = -1;
 	while (++i < p->nbr_philo)
 	{
-		
 		if (pthread_create(&p->philo[i].th, NULL, routine,
 				(void *)&p->philo[i]) != 0)
 			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(6));
@@ -111,11 +107,7 @@ int	ft_philosophers(t_data_philo *p)
 	}
 	i = -1;
 	while (++i < p->nbr_philo)
-	{
-		if (pthread_join(p->philo[i].th, NULL) != 0)
-			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(7));
-		
-	}
+		pthread_join(p->philo[i].th, NULL);
 	return (0);
 }
 
@@ -129,7 +121,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	if (init_philo_part2(&p) != 0)
 		return (1);
-	if (ft_philosophers(&p) != 0)
+	if (ft_philosophers(&p, -1) != 0)
 		return (1);
 	destroy_mutex(&p);
 	ft_free(&p);
