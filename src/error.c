@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:25:05 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/21 21:08:13 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/21 23:46:07 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ int	err_msg(int err)
 		ft_putstr_err("Error\nMax value that i autorize: 2147483647\n");
 	if (err == 5)
 		ft_putstr_err("Error\nMalloc failled\n");
+	if (err == 6)
+		ft_putstr_err("Error\npthread_create fail function ft_philosophers\n");
+	if (err == 7)
+		ft_putstr_err("Error\npthread_join fail function ft_philosophers\n");
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:11:15 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/21 22:19:00 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/22 01:20:07 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,13 +96,13 @@ int	ft_philosophers(t_data_philo *p)
 	{
 		if (pthread_create(&p->philo[i].th, NULL, routine,
 				(void *)&p->philo[i]) != 0)
-			return (1);
+			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(6));
 	}
 	i = -1;
 	while (++i < p->nbr_philo)
 	{
 		if (pthread_join(p->philo[i].th, NULL) != 0)
-			return (1);
+			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(7));
 	}
 	return (0);
 }

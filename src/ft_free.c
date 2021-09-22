@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 22:33:34 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/19 01:12:03 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/22 01:04:07 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_free(t_data_philo *p)
 	return (0);
 }
 
-void	destroy_mutex(t_data_philo *p)
+int	destroy_mutex(t_data_philo *p)
 {
 	int	i;
 
@@ -35,4 +35,5 @@ void	destroy_mutex(t_data_philo *p)
 	while (++i < p->nbr_philo)
 		pthread_mutex_destroy(&p->forks[i]);
 	pthread_mutex_destroy(&p->mutex);
+	return (0);
 }
