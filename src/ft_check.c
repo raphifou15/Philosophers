@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 19:06:08 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/22 15:43:57 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/23 17:57:22 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,43 +37,41 @@ int	check_if_alive(t_philo *p)
 	return (0);
 }
 
-int	ft_check_if_die_during_eating(t_philo *p)
+void	ft_check_if_die_during_eating(t_philo *p)
 {
 	unsigned long	time;
 	unsigned long	die;
 
 	die = (unsigned long)p->die;
 	time = (time_now() - p->last_meal);
-	if (time + p->eating > die + 4)
-	{
-		p->eating = (die + 4) - time;
-		p->nbr_eat++;
-		printf("\e[15;33mtimestamp: %ld   ", time_now() - p->data->time_begin);
-		printf("%d is eating  nbr_eating: %d\e[0m\n", p->num_philo, p->nbr_eat);
-		usleep(p->eating * 1000);
-		check_if_alive(p);
-		pthread_mutex_unlock(&p->data->mutex);
-		return (1);
-	}
-	return (0);
+	if (time + p->eating >= die)
+		p->eating = die - time;
 }
 
-int	ft_check_if_die_during_sleeping(t_philo *p)
+void	ft_check_if_die_during_sleeping(t_philo *p)
 {
 	unsigned long	time;
 	unsigned long	die;
 
 	die = (unsigned long)p->die;
 	time = (time_now() - p->last_meal);
-	if (time + p->sleeping > die + 4)
+	if (time + p->sleeping >= die)
+		p->sleeping = die - time;
+}
+
+int	ft_check_if_someone_died(t_philo *p)
+{
+	int	i;
+	int x;
+	
+	i = -1;
+	x = 0;
+	while (++i < p->data->nbr_philo)
 	{
-		p->sleeping = (die + 4) - time;
-		printf("\e[1;36mtimestamp: %ld   ", time_now() - p->data->time_begin);
-		printf("%d is sleeping\e[0m\n", p->num_philo);
-		usleep(p->sleeping * 1000);
-		check_if_alive(p);
+		pthread_mutex_lock(&p->data->mutex);
+		if (check_if_alive(&p->data->philo[i]) == 1)
+			x++;
 		pthread_mutex_unlock(&p->data->mutex);
-		return (1);
 	}
-	return (0);
+	return (x);
 }

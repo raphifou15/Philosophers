@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:11:15 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/22 01:20:07 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/23 18:03:34 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,23 +83,17 @@ void	init_philo_part3(t_data_philo *p)
 	}
 }
 
-int	ft_philosophers(t_data_philo *p, int i)
+int	ft_philosophers(t_data_philo *p)
 {
+	int	i;
+
+	i = -1;
 	p->time_begin = time_now();
 	while (++i < p->nbr_philo)
 		p->philo[i].last_meal = time_now();
-	i = -1;
-	while (++i < p->nbr_philo)
-	{
-		if (pthread_create(&p->philo[i].th, NULL, routine,
-				(void *)&p->philo[i]) != 0)
-			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(6));
-		++i;
-	}
 	i = 0;
 	while (++i < p->nbr_philo)
 	{
-		usleep(200);
 		if (pthread_create(&p->philo[i].th, NULL, routine,
 				(void *)&p->philo[i]) != 0)
 			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(6));
@@ -107,7 +101,18 @@ int	ft_philosophers(t_data_philo *p, int i)
 	}
 	i = -1;
 	while (++i < p->nbr_philo)
-		pthread_join(p->philo[i].th, NULL);
+	{
+		if (pthread_create(&p->philo[i].th, NULL, routine,
+				(void *)&p->philo[i]) != 0)
+			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(6));
+		++i;
+	}
+	i = -1;
+	while (++i < p->nbr_philo)
+	{
+		if (pthread_join(p->philo[i].th, NULL) != 0)
+			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(7));
+	}
 	return (0);
 }
 
@@ -121,7 +126,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	if (init_philo_part2(&p) != 0)
 		return (1);
-	if (ft_philosophers(&p, -1) != 0)
+	if (ft_philosophers(&p) != 0)
 		return (1);
 	destroy_mutex(&p);
 	ft_free(&p);

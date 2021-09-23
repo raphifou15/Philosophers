@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:25:59 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/21 21:11:46 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/23 02:07:35 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@ void	next_start_eating(t_philo *p)
 		pthread_mutex_unlock(p->left);
 		pthread_mutex_unlock(p->right);
 	}
+}
+
+int	philo_less_than_1_left(t_philo *p)
+{
+	usleep((p->data->t_die - (time_now() - p->last_meal)) * 1000);
+	printf("\e[15;31mtimestamp: %ld   ", time_now() - p->data->time_begin);
+	printf("%d died\e[0m\n", p->num_philo);
+	pthread_mutex_unlock(p->left);
+	return (1);
 }
 
 int	philo_less_than_1_right(t_philo *p)
