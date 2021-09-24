@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 03:44:24 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/21 22:22:43 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/24 18:04:23 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ int	ft_atoi_m(char *str)
 	return (nb);
 }
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+
 void	ft_putstr_err(char *str)
 {
 	int	i;
@@ -48,4 +54,18 @@ unsigned long	time_now(void)
 
 	gettimeofday(&tv, NULL);
 	return ((unsigned long)((tv.tv_sec * 1000) + (tv.tv_usec / 1000)));
+}
+
+void	ft_putstr(char *str)
+{
+	int	i = -1;
+
+	while (str[++i] != '\0')
+		write(1, &str[i], 1);
+}
+
+void	ft_putnbr_unsigned_long(unsigned long n)
+{
+	(n > 9) ? ft_putnbr_unsigned_long(n / 10) : ft_putchar(n + 48);
+	(n > 9) ? ft_putchar((n % 10) + 48) : 0;
 }

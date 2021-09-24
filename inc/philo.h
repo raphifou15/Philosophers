@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/23 16:29:14 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/24 18:10:38 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ int					err_msg(int err);
 
 int					ft_atoi_m(char *str);
 void				ft_putstr_err(char *str);
+void				ft_putchar(char c);
 unsigned long		time_now(void);
+void				ft_putstr(char *str);
+void				ft_putnbr_unsigned_long(unsigned long n);
 
 int					ft_free(t_data_philo *p);
 int					destroy_mutex(t_data_philo *p);

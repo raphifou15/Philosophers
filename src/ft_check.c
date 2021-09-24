@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 19:06:08 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/23 17:57:22 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/24 16:38:08 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,11 @@ int	check_if_alive(t_philo *p)
 
 void	ft_check_if_die_during_eating(t_philo *p)
 {
-	unsigned long	time;
 	unsigned long	die;
 
 	die = (unsigned long)p->die;
-	time = (time_now() - p->last_meal);
-	if (time + p->eating >= die)
-		p->eating = die - time;
+	if (p->eating >= die)
+		p->eating = die;
 }
 
 void	ft_check_if_die_during_sleeping(t_philo *p)
@@ -68,10 +66,8 @@ int	ft_check_if_someone_died(t_philo *p)
 	x = 0;
 	while (++i < p->data->nbr_philo)
 	{
-		pthread_mutex_lock(&p->data->mutex);
 		if (check_if_alive(&p->data->philo[i]) == 1)
 			x++;
-		pthread_mutex_unlock(&p->data->mutex);
 	}
 	return (x);
 }
