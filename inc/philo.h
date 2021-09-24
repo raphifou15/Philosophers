@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/24 18:10:38 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/24 21:00:05 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int					main(int argc, char *argv[]);
 int					init_philo(t_data_philo *p, char **argv);
 int					init_philo_part2(t_data_philo *p);
 void				init_philo_part3(t_data_philo *p);
+
 int					ft_philosophers(t_data_philo *p);
 
 void				*routine(void *pa);
