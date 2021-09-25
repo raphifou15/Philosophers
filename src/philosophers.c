@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 20:57:24 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/24 21:33:22 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/25 18:43:53 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_philosophers(t_data_philo *p)
 {
-    p->time_begin = time_now(); 
+    p->time_begin = time_now();
+	if (p->nbr_philo <= 1)
+		return (one_philo_or_less_eat(p));
 	return (0);
-    if (p->nbr_philo <= 1)
-        return (one_philo_or_less_eat(p));
 }
 
 /*
@@ -46,3 +46,4 @@ int	ft_philosophers(t_data_philo *p)
 		if (pthread_join(p->philo[i].th, NULL) != 0)
 			return (1 + destroy_mutex(p) + ft_free(p) + err_msg(7));
 	}*/
+
