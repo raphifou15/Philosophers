@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 21:47:42 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/25 23:09:06 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/26 00:46:58 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,10 @@ void	*routine_1philo(void *pa)
     return (NULL);
 }
 
-int		die_1philo(t_data_philo *p, int stop_check, char *str)
+int		die_1philo(t_data_philo *p, int stop_check)
 {
 	unsigned long	time;
 	
-	str[0] = '\0';
 	if (stop_check)
 		return (1);
 	time = time_now();
@@ -71,9 +70,7 @@ int one_philo_or_less_eat(t_data_philo *p)
 {
 	int	tmp;
 	int	tmp2;
-	char	*str;
 
-	str = malloc(sizeof(char) * 500);
 	tmp2 = 0;
 	p->table = 1;
     if (p->nbr_philo == 0)
@@ -91,11 +88,10 @@ int one_philo_or_less_eat(t_data_philo *p)
 	{
     	pthread_mutex_lock(&p->mutex);
 		tmp = p->table;
-		if (die_1philo(p, tmp2, str))
+		if (die_1philo(p, tmp2))
 			tmp2 = 2;	
 		pthread_mutex_unlock(&p->mutex);
 	}
-	free(str);
     return (0);
 }
     /*while (1)

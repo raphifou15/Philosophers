@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/09/25 19:26:46 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/09/26 00:37:55 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS = 	main.c \
 		routine.c \
 		next.c \
 		itoa.c \
-		one_philo.c
+		one_philo.c \
+		philo_pair.c
 
 OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
 
