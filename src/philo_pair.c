@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 00:28:07 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/27 04:45:18 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/27 15:10:49 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_time(t_philo *p, unsigned long time_to_do)
 {
 	unsigned long	time;
 
-	//usleep((time_to_do * 1000) / 2);
+	usleep(((time_to_do * 1000) / 5) * 4);
 	time = time_now();
 	while (time_to_do > time - p->last_meal)
 	{
@@ -31,7 +31,7 @@ void	*routine_philo_pair(void *pa)
 	t_philo			*p;
 
 	p = (t_philo *)pa;
-
+	
 	pthread_mutex_lock(&p->data->mutex);
 	p->data->time_begin = time_now();
 	p->last_meal = time_now();
@@ -42,22 +42,26 @@ void	*routine_philo_pair(void *pa)
 		if (p->num_philo % 2 == 0)
 		{
 			pthread_mutex_lock(p->right);
-			p->last_meal = time_now();
 			pthread_mutex_lock(&p->data->mutex);
 			display_fork_right(p);
 			tmp = p->data->die;
 			pthread_mutex_unlock(&p->data->mutex);
 			pthread_mutex_lock(p->left);
 			pthread_mutex_lock(&p->data->mutex);
+			p->last_meal = time_now();
 			display_fork_left(p);
 			tmp = p->data->die;
+			display_eating(p);
 			pthread_mutex_unlock(&p->data->mutex);
 			ft_time(p, p->eating);
 			pthread_mutex_unlock(p->right);
 			pthread_mutex_unlock(p->left);
 			pthread_mutex_lock(&p->data->mutex);
 			tmp = p->data->die;
+			display_sleeping(p);
 			pthread_mutex_unlock(&p->data->mutex);
+			if (tmp == 1)
+				break ;
 			ft_time(p, p->sleeping);
 		}
 		else
@@ -73,13 +77,17 @@ void	*routine_philo_pair(void *pa)
 			display_fork_right(p);
 			tmp = p->data->die;
 			p->last_meal = time_now();
+			display_eating(p);
 			pthread_mutex_unlock(&p->data->mutex);
 			ft_time(p, p->eating);
 			pthread_mutex_unlock(p->left);
 			pthread_mutex_unlock(p->right);
 			pthread_mutex_lock(&p->data->mutex);
 			tmp = p->data->die;
+			display_sleeping(p);
 			pthread_mutex_unlock(&p->data->mutex);
+			if (tmp == 1)
+				break ;
 			ft_time(p, p->sleeping);
 		}
 	}
@@ -93,7 +101,9 @@ int	die_philo_pair(t_data_philo *p, int stop_check)
 {
 	int	i;
 	unsigned long time;
+	int				eat;
 
+	eat = 0;
 	i = -1;
 	if (stop_check > 0)
 		return (1);
@@ -113,6 +123,13 @@ int	die_philo_pair(t_data_philo *p, int stop_check)
 			ft_bzero(p->str);
 			return (1);
 		}
+		if (p->philo[i].have_eating_max == 1)
+			eat++;
+	}
+	if (eat == p->nbr_philo)
+	{
+		p->die = 1;
+		return (1);
 	}
 	return (0);
 }
@@ -131,6 +148,7 @@ int	philo_pair(t_data_philo *p, int i)
 	{
 		pthread_create(&p->philo[i].th, NULL, routine_philo_pair,
 		(void *)&p->philo[i]);
+		usleep(10);
 	}
 	pthread_mutex_lock(&p->mutex);
 	p->time_begin = time_now();
@@ -143,13 +161,12 @@ int	philo_pair(t_data_philo *p, int i)
 		if (die_philo_pair(p, tmp2) == 1)
 			tmp2 = 2;
 		pthread_mutex_unlock(&p->mutex);
-		usleep(100);
+		usleep(1);
 	}
 	i = -1;
 	while (++i < p->nbr_philo)
 		pthread_join(p->philo[i].th, NULL);
 	return (0);
-
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/27 03:00:22 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/27 15:10:32 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,7 @@ int					philo_pair(t_data_philo *p, int i);
 
 void				display_fork_right(t_philo *p);
 void				display_fork_left(t_philo *p);
+void				display_eating(t_philo *p);
+void				display_sleeping(t_philo *p);
 
 #endif
