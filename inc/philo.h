@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/26 18:43:22 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/27 03:00:22 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,8 @@ char				*ft_itoa(unsigned long nbr, char *str);
 void				ft_bzero(char *str);
 
 int					philo_pair(t_data_philo *p, int i);
+
+void				display_fork_right(t_philo *p);
+void				display_fork_left(t_philo *p);
 
 #endif

@@ -6,11 +6,24 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 00:28:07 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/27 01:37:28 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/27 04:45:18 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void	ft_time(t_philo *p, unsigned long time_to_do)
+{
+	unsigned long	time;
+
+	//usleep((time_to_do * 1000) / 2);
+	time = time_now();
+	while (time_to_do > time - p->last_meal)
+	{
+		usleep(100);
+		time = time_now();
+	}
+}
 
 void	*routine_philo_pair(void *pa)
 {
@@ -19,10 +32,9 @@ void	*routine_philo_pair(void *pa)
 
 	p = (t_philo *)pa;
 
-	pthread_mutex_lock(&p->data->all_thread);
-	pthread_mutex_unlock(&p->data->all_thread);
 	pthread_mutex_lock(&p->data->mutex);
 	p->data->time_begin = time_now();
+	p->last_meal = time_now();
 	pthread_mutex_unlock(&p->data->mutex);
 	tmp = 0;
 	while (tmp == 0)
@@ -30,40 +42,46 @@ void	*routine_philo_pair(void *pa)
 		if (p->num_philo % 2 == 0)
 		{
 			pthread_mutex_lock(p->right);
+			p->last_meal = time_now();
+			pthread_mutex_lock(&p->data->mutex);
+			display_fork_right(p);
+			tmp = p->data->die;
+			pthread_mutex_unlock(&p->data->mutex);
 			pthread_mutex_lock(p->left);
 			pthread_mutex_lock(&p->data->mutex);
-			tmp = p->data->die;
-			ft_itoa(p->num_philo, p->data->str);
-			str_join(p->data->str, "  \n");
-			ft_putstr(p->data->str);
-			ft_bzero(p->data->str);
+			display_fork_left(p);
 			tmp = p->data->die;
 			pthread_mutex_unlock(&p->data->mutex);
-			pthread_mutex_unlock(p->left);
+			ft_time(p, p->eating);
 			pthread_mutex_unlock(p->right);
+			pthread_mutex_unlock(p->left);
 			pthread_mutex_lock(&p->data->mutex);
 			tmp = p->data->die;
 			pthread_mutex_unlock(&p->data->mutex);
+			ft_time(p, p->sleeping);
 		}
 		else
 		{
 			
 			pthread_mutex_lock(p->left);
+			pthread_mutex_lock(&p->data->mutex);
+			display_fork_left(p);
+			tmp = p->data->die;
+			pthread_mutex_unlock(&p->data->mutex);
 			pthread_mutex_lock(p->right);
 			pthread_mutex_lock(&p->data->mutex);
-			ft_itoa(p->num_philo, p->data->str);
+			display_fork_right(p);
 			tmp = p->data->die;
-			str_join(p->data->str, "  \n");
-			ft_putstr(p->data->str);
-			ft_bzero(p->data->str);
+			p->last_meal = time_now();
 			pthread_mutex_unlock(&p->data->mutex);
-			pthread_mutex_unlock(p->right);
+			ft_time(p, p->eating);
 			pthread_mutex_unlock(p->left);
+			pthread_mutex_unlock(p->right);
 			pthread_mutex_lock(&p->data->mutex);
 			tmp = p->data->die;
 			pthread_mutex_unlock(&p->data->mutex);
+			ft_time(p, p->sleeping);
 		}
-		usleep(50);
 	}
 	pthread_mutex_lock(&p->data->mutex);
 	p->data->table--;
@@ -82,7 +100,8 @@ int	die_philo_pair(t_data_philo *p, int stop_check)
 	time = time_now();
 	while (++i < p->nbr_philo)
 	{
-		if (time - p->time_begin >= (unsigned long)p->t_die)
+		if (time - p->time_begin >=  (unsigned long)p->t_die
+			&& time - p->philo[i].last_meal >= (unsigned long)p->t_die)
 		{
 			p->die = 1;
 			str_join(p->str, "\e[15;31mtimestamp: ");
@@ -115,6 +134,7 @@ int	philo_pair(t_data_philo *p, int i)
 	}
 	pthread_mutex_lock(&p->mutex);
 	p->time_begin = time_now();
+	
 	pthread_mutex_unlock(&p->mutex);
 	while (tmp > 0)
 	{
@@ -123,6 +143,7 @@ int	philo_pair(t_data_philo *p, int i)
 		if (die_philo_pair(p, tmp2) == 1)
 			tmp2 = 2;
 		pthread_mutex_unlock(&p->mutex);
+		usleep(100);
 	}
 	i = -1;
 	while (++i < p->nbr_philo)
