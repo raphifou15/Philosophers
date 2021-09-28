@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 00:28:07 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/27 15:10:49 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 01:02:10 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*routine_philo_pair(void *pa)
 	p = (t_philo *)pa;
 	
 	pthread_mutex_lock(&p->data->mutex);
-	p->data->time_begin = time_now();
+	//p->data->time_begin = time_now();
 	p->last_meal = time_now();
 	pthread_mutex_unlock(&p->data->mutex);
 	tmp = 0;
@@ -60,19 +60,20 @@ void	*routine_philo_pair(void *pa)
 			tmp = p->data->die;
 			display_sleeping(p);
 			pthread_mutex_unlock(&p->data->mutex);
-			if (tmp == 1)
-				break ;
 			ft_time(p, p->sleeping);
+			pthread_mutex_lock(&p->data->mutex);
+			display_thinking(p);
+			pthread_mutex_unlock(&p->data->mutex);
 		}
 		else
 		{
-			
 			pthread_mutex_lock(p->left);
 			pthread_mutex_lock(&p->data->mutex);
 			display_fork_left(p);
 			tmp = p->data->die;
 			pthread_mutex_unlock(&p->data->mutex);
 			pthread_mutex_lock(p->right);
+			
 			pthread_mutex_lock(&p->data->mutex);
 			display_fork_right(p);
 			tmp = p->data->die;
@@ -80,15 +81,20 @@ void	*routine_philo_pair(void *pa)
 			display_eating(p);
 			pthread_mutex_unlock(&p->data->mutex);
 			ft_time(p, p->eating);
+			
 			pthread_mutex_unlock(p->left);
 			pthread_mutex_unlock(p->right);
+			
 			pthread_mutex_lock(&p->data->mutex);
 			tmp = p->data->die;
 			display_sleeping(p);
 			pthread_mutex_unlock(&p->data->mutex);
-			if (tmp == 1)
-				break ;
+			
 			ft_time(p, p->sleeping);
+			
+			pthread_mutex_lock(&p->data->mutex);
+			display_thinking(p);
+			pthread_mutex_unlock(&p->data->mutex);
 		}
 	}
 	pthread_mutex_lock(&p->data->mutex);
@@ -131,6 +137,7 @@ int	die_philo_pair(t_data_philo *p, int stop_check)
 		p->die = 1;
 		return (1);
 	}
+	
 	return (0);
 }
 int	philo_pair(t_data_philo *p, int i)
@@ -150,18 +157,14 @@ int	philo_pair(t_data_philo *p, int i)
 		(void *)&p->philo[i]);
 		usleep(10);
 	}
-	pthread_mutex_lock(&p->mutex);
-	p->time_begin = time_now();
 	
-	pthread_mutex_unlock(&p->mutex);
 	while (tmp > 0)
 	{
-		pthread_mutex_lock(&p->mutex);
+		pthread_mutex_lock(&p->mutex);	
 		tmp = p->table;
 		if (die_philo_pair(p, tmp2) == 1)
 			tmp2 = 2;
 		pthread_mutex_unlock(&p->mutex);
-		usleep(1);
 	}
 	i = -1;
 	while (++i < p->nbr_philo)

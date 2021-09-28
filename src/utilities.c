@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 03:44:24 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/25 21:53:01 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 16:40:11 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
-
 
 void	ft_putstr_err(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/27 15:10:32 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 16:38:25 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,17 @@ typedef struct s_data_philo
 	int				t_eat;
 	int				t_sleep;
 	int				t_philo_must_eat;
-	unsigned long	time_begin;
+	signed long		time_begin;
 	char			str[80];
 	t_philo			*philo;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	mutex;
-	pthread_mutex_t	mutex2;
-	pthread_mutex_t	all_thread;
+	
+	pthread_mutex_t	pr_data_die;
+	pthread_mutex_t	pr_data_table;
+	pthread_mutex_t	pr_print;
+	pthread_mutex_t	wait_all;
+	
 }					t_data_philo;
 
 int					main(int argc, char *argv[]);
@@ -90,5 +94,8 @@ void				display_fork_right(t_philo *p);
 void				display_fork_left(t_philo *p);
 void				display_eating(t_philo *p);
 void				display_sleeping(t_philo *p);
+void				display_thinking(t_philo *p);
+
+int					philo_odd(t_data_philo *p);
 
 #endif

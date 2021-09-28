@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 20:56:27 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/26 18:43:18 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 16:40:01 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ int	init_philo_part2(t_data_philo *p)
 	while (++i < p->nbr_philo)
 		pthread_mutex_init(&p->forks[i], NULL);
 	pthread_mutex_init(&p->mutex, NULL);
-	pthread_mutex_init(&p->mutex2, NULL);
-	pthread_mutex_init(&p->all_thread, NULL);
+	pthread_mutex_init(&p->pr_data_die, NULL);
+	pthread_mutex_init(&p->pr_data_table, NULL);
+	pthread_mutex_init(&p->pr_print, NULL);
+	pthread_mutex_init(&p->wait_all, NULL);
 	init_philo_part3(p);
 	p->str[0] = '\0';
 	p->table = 1;
@@ -86,8 +88,6 @@ void	init_philo_part3(t_data_philo *p)
 			p->philo[i].left = &p->forks[i + 1];
 	}
 }
-
-
 
 int	main(int argc, char *argv[])
 {

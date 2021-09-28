@@ -1,0 +1,242 @@
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
+(standard input):11:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
+(standard input):13:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
+(standard input):21:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
+(standard input):24:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
+(standard input):30:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
+(standard input):34:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
+(standard input):40:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
+(standard input):43:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
+(standard input):49:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
+(standard input):52:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
+(standard input):59:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
+(standard input):63:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
+(standard input):70:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
+(standard input):73:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
+
+
+
+1
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
+(standard input):10:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
+(standard input):13:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
+(standard input):21:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
+(standard input):24:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
+(standard input):30:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
+(standard input):33:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
+(standard input):40:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
+(standard input):43:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
+(standard input):49:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
+(standard input):53:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
+(standard input):60:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
+(standard input):64:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
+(standard input):69:[15;33mtimestamp: 703  2 is eating  nbr_eating: 4[0m
+(standard input):72:[15;33mtimestamp: 703  4 is eating  nbr_eating: 4[0m
+
+
+
+2
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
+(standard input):11:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
+(standard input):14:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
+(standard input):19:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
+(standard input):22:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
+(standard input):30:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
+(standard input):34:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
+(standard input):39:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
+(standard input):42:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
+(standard input):49:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
+(standard input):52:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
+(standard input):60:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
+(standard input):63:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
+(standard input):69:[15;33mtimestamp: 703  4 is eating  nbr_eating: 4[0m
+(standard input):72:[15;33mtimestamp: 703  2 is eating  nbr_eating: 4[0m
+
+
+
+3
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
+(standard input):10:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
+(standard input):13:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
+(standard input):19:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
+(standard input):22:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
+(standard input):31:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
+(standard input):34:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
+(standard input):41:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
+(standard input):44:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
+(standard input):51:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
+(standard input):54:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
+(standard input):59:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
+(standard input):62:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
+(standard input):70:[15;33mtimestamp: 704  4 is eating  nbr_eating: 4[0m
+(standard input):73:[15;33mtimestamp: 705  2 is eating  nbr_eating: 4[0m
+
+
+
+4
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
+(standard input):10:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
+(standard input):13:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
+(standard input):19:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
+(standard input):22:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
+(standard input):29:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
+(standard input):34:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
+(standard input):39:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
+(standard input):43:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
+(standard input):50:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
+(standard input):54:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
+(standard input):61:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
+(standard input):64:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
+(standard input):70:[15;33mtimestamp: 703  2 is eating  nbr_eating: 4[0m
+(standard input):73:[15;33mtimestamp: 703  4 is eating  nbr_eating: 4[0m
+
+
+
+5
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
+(standard input):10:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
+(standard input):14:[15;33mtimestamp: 104  4 is eating  nbr_eating: 1[0m
+(standard input):21:[15;33mtimestamp: 204  3 is eating  nbr_eating: 2[0m
+(standard input):24:[15;33mtimestamp: 204  1 is eating  nbr_eating: 2[0m
+(standard input):30:[15;33mtimestamp: 304  4 is eating  nbr_eating: 2[0m
+(standard input):33:[15;33mtimestamp: 304  2 is eating  nbr_eating: 2[0m
+(standard input):40:[15;33mtimestamp: 404  1 is eating  nbr_eating: 3[0m
+(standard input):44:[15;33mtimestamp: 404  3 is eating  nbr_eating: 3[0m
+(standard input):49:[15;33mtimestamp: 504  4 is eating  nbr_eating: 3[0m
+(standard input):52:[15;33mtimestamp: 504  2 is eating  nbr_eating: 3[0m
+(standard input):61:[15;33mtimestamp: 604  3 is eating  nbr_eating: 4[0m
+(standard input):64:[15;33mtimestamp: 604  1 is eating  nbr_eating: 4[0m
+(standard input):70:[15;33mtimestamp: 704  4 is eating  nbr_eating: 4[0m
+(standard input):74:[15;33mtimestamp: 704  2 is eating  nbr_eating: 4[0m
+
+
+
+6
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
+(standard input):11:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
+(standard input):13:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
+(standard input):20:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
+(standard input):24:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
+(standard input):29:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
+(standard input):32:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
+(standard input):40:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
+(standard input):43:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
+(standard input):49:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
+(standard input):54:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
+(standard input):61:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
+(standard input):64:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
+(standard input):69:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
+(standard input):73:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
+
+
+
+7
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
+(standard input):11:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
+(standard input):13:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
+(standard input):21:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
+(standard input):24:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
+(standard input):29:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
+(standard input):32:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
+(standard input):39:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
+(standard input):42:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
+(standard input):50:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
+(standard input):54:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
+(standard input):60:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
+(standard input):63:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
+(standard input):70:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
+(standard input):73:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
+
+
+
+8
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
+(standard input):11:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
+(standard input):14:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
+(standard input):20:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
+(standard input):24:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
+(standard input):31:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
+(standard input):34:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
+(standard input):40:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
+(standard input):43:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
+(standard input):50:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
+(standard input):54:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
+(standard input):59:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
+(standard input):62:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
+(standard input):69:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
+(standard input):72:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
+
+
+
+9
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
+(standard input):10:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
+(standard input):14:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
+(standard input):20:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
+(standard input):24:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
+(standard input):30:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
+(standard input):34:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
+(standard input):39:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
+(standard input):42:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
+(standard input):49:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
+(standard input):53:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
+(standard input):60:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
+(standard input):63:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
+(standard input):69:[15;33mtimestamp: 703  2 is eating  nbr_eating: 4[0m
+(standard input):72:[15;33mtimestamp: 703  4 is eating  nbr_eating: 4[0m
+
+
+
+10
+
+
+(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
+(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
+(standard input):12:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
+(standard input):14:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
+(standard input):19:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
+(standard input):24:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
+(standard input):30:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
+(standard input):34:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
+(standard input):41:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
+(standard input):44:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
+(standard input):49:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
+(standard input):52:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
+(standard input):61:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
+(standard input):64:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
+(standard input):71:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
+(standard input):74:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
+
+
+
+11
+
+
