@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 20:56:27 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/28 18:12:46 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 18:50:24 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	init_philo_part2(t_data_philo *p)
 	pthread_mutex_init(&p->pr_print, NULL);
 	pthread_mutex_init(&p->wait_all, NULL);
 	pthread_mutex_init(&p->pr_time, NULL);
+	pthread_mutex_init(&p->pr_order, NULL);
 	init_philo_part3(p);
 	p->str[0] = '\0';
 	p->table = 1;
