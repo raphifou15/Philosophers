@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 20:56:27 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/28 18:01:00 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 18:12:46 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	init_philo_part2(t_data_philo *p)
 	init_philo_part3(p);
 	p->str[0] = '\0';
 	p->table = 1;
+	p->order = 0;
 	return (0);
 }
 

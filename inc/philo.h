@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/28 18:01:26 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 18:11:58 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_data_philo
 	int				t_philo_must_eat;
 	signed long		time_begin;
 	char			str[80];
+	int				order;
 	t_philo			*philo;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	mutex;
