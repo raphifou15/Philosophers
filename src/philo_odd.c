@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/28 17:03:48 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 18:05:25 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ void    *routine_odd(void *pa)
 	p = (t_philo *)pa;
     tmp = 0;
 	
+	pthread_mutex_lock(&p->data->pr_time);
 	p->last_meal = time_now();
+	pthread_mutex_unlock(&p->data->pr_time);
 	pthread_mutex_lock(&p->data->wait_all);
 	pthread_mutex_unlock(&p->data->wait_all);
 	
@@ -41,9 +43,9 @@ int	die_philo_odd(t_data_philo *p, int stop_check)
 {
 	int	i;
 	unsigned long time;
-	int				eat;
+	//int				eat;
 
-	eat = 0;
+	//eat = 0;
 	i = -1;
 	if (stop_check > 0)
 		return (1);
@@ -51,9 +53,11 @@ int	die_philo_odd(t_data_philo *p, int stop_check)
 	while (++i < p->nbr_philo)
 	{
 		time = time_now();
+		pthread_mutex_lock(&p->pr_time);
 		if (time - p->time_begin >=  (unsigned long)p->t_die
 			&& time - p->philo[i].last_meal >= (unsigned long)p->t_die)
 		{
+			pthread_mutex_unlock(&p->pr_time);
 			pthread_mutex_lock(&p->pr_data_die);
 			p->die = 1;
 			pthread_mutex_unlock(&p->pr_data_die);
@@ -68,6 +72,7 @@ int	die_philo_odd(t_data_philo *p, int stop_check)
 			pthread_mutex_unlock(&p->pr_print);
 			return (1);
 		}
+		pthread_mutex_unlock(&p->pr_time);
 		//if (p->philo[i].have_eating_max == 1)
 		//	eat++;
     }

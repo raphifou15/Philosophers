@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/28 16:38:25 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/28 18:01:26 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_data_philo
 	pthread_mutex_t	pr_data_table;
 	pthread_mutex_t	pr_print;
 	pthread_mutex_t	wait_all;
+	pthread_mutex_t	pr_time;
 	
 }					t_data_philo;
 

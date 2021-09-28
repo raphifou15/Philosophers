@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/09/27 22:39:16 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/09/28 17:40:55 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,16 +35,15 @@ SRCS = 	main.c \
 OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
-
+	${CC} ${FLAGS} -c $< -o ${<:.c=.o} 
 all:${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} ${FLAGS} ${OBJS} -o ${NAME}
+	${CC} ${FLAGS} ${OBJS} -o ${NAME} -lpthread
 
 ${DIR_OBJ}/%.o: ${DIR_SRC}/%.c
 	[ -d $(DIR_OBJ) ] || mkdir -p $(DIR_OBJ)
-	${CC} $(FLAGS) -I ${DIR_INC} -c $< -o $@
+	${CC} $(FLAGS) -I ${DIR_INC} -c $< -o $@ -lpthread
 
 clean:
 	${RM} ${OBJS}
