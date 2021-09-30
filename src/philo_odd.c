@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/30 15:03:17 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/30 18:43:44 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,10 +116,12 @@ void    *routine_odd(void *pa)
 			if (p->data->tour == ((p->data->nbr_philo / 2) + (p->data->nbr_philo % 2)))
 			{
 				p->data->tour = 0;
+				pthread_mutex_unlock(&p->data->pr_tour);
 				pthread_mutex_unlock(&p->data->wave_2);
 				pthread_mutex_lock(&p->data->wave_1);
 			}
-			pthread_mutex_unlock(&p->data->pr_tour);
+			else
+				pthread_mutex_unlock(&p->data->pr_tour);
 		}
 		else if (p->data->order % 2 != p->num_philo % 2)
 		{
@@ -138,10 +140,13 @@ void    *routine_odd(void *pa)
 			if (p->data->tour == ((p->data->nbr_philo / 2) + check))
 			{
 				p->data->tour = 0;
+				pthread_mutex_unlock(&p->data->pr_tour);
+				
 				pthread_mutex_lock(&p->data->wave_2);
 				pthread_mutex_unlock(&p->data->wave_1);
 			}
-			pthread_mutex_unlock(&p->data->pr_tour);
+			else
+				pthread_mutex_unlock(&p->data->pr_tour);
 		}
 		usleep(10000);
 		p->nbr_eat++;
