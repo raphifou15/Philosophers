@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/28 20:57:34 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/30 00:38:54 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ typedef struct s_data_philo
 	signed long		time_begin;
 	char			str[80];
 	int				order;
+	int				order2;
+	int				pivot;
 	t_philo			*philo;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	mutex;
@@ -60,9 +62,11 @@ typedef struct s_data_philo
 	pthread_mutex_t	pr_time;
 	pthread_mutex_t	pr_order;
 
+	pthread_mutex_t	block_last_elem;
 	pthread_mutex_t	wave_1;
 	pthread_mutex_t	wave_2;
 	pthread_mutex_t	wave_3;
+	pthread_mutex_t	temp;
 	
 }					t_data_philo;
 
