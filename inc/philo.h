@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/30 14:02:30 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/30 20:48:48 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_data_philo
 	int				order2;
 	int				pivot;
 	int				tour;
+	int				temp;
 	t_philo			*philo;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	mutex;
@@ -67,7 +68,7 @@ typedef struct s_data_philo
 	pthread_mutex_t	wave_1;
 	pthread_mutex_t	wave_2;
 	pthread_mutex_t	wave_3;
-	pthread_mutex_t	temp;
+	pthread_mutex_t	pr_temp;
 	
 	pthread_mutex_t	pr_tour;
 }					t_data_philo;

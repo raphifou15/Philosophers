@@ -1,242 +1,561 @@
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
-(standard input):11:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
-(standard input):13:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
-(standard input):21:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
-(standard input):24:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
-(standard input):30:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
-(standard input):34:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
-(standard input):40:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
-(standard input):43:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
-(standard input):49:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
-(standard input):52:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
-(standard input):59:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
-(standard input):63:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
-(standard input):70:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
-(standard input):73:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
-
+13425 13425 13425 13425 13425 13425 13425 31425 13425 13[15;31mtimestamp: 2800  2 died[0m
+245 
 
 
 1
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
-(standard input):10:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
-(standard input):13:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
-(standard input):21:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
-(standard input):24:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
-(standard input):30:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
-(standard input):33:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
-(standard input):40:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
-(standard input):43:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
-(standard input):49:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
-(standard input):53:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
-(standard input):60:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
-(standard input):64:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
-(standard input):69:[15;33mtimestamp: 703  2 is eating  nbr_eating: 4[0m
-(standard input):72:[15;33mtimestamp: 703  4 is eating  nbr_eating: 4[0m
-
+24135 24135 24135 24135 24135 24315 24315 24315 24135 24[15;31mtimestamp: 2800  3 died[0m
+13
 
 
 2
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
-(standard input):11:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
-(standard input):14:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
-(standard input):19:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
-(standard input):22:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
-(standard input):30:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
-(standard input):34:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
-(standard input):39:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
-(standard input):42:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
-(standard input):49:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
-(standard input):52:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
-(standard input):60:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
-(standard input):63:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
-(standard input):69:[15;33mtimestamp: 703  4 is eating  nbr_eating: 4[0m
-(standard input):72:[15;33mtimestamp: 703  2 is eating  nbr_eating: 4[0m
-
+24315 24315 24315 24135 42135 42135 24315 24315 24315 24[15;31mtimestamp: 2800  2 died[0m
+315 
 
 
 3
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
-(standard input):10:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
-(standard input):13:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
-(standard input):19:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
-(standard input):22:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
-(standard input):31:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
-(standard input):34:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
-(standard input):41:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
-(standard input):44:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
-(standard input):51:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
-(standard input):54:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
-(standard input):59:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
-(standard input):62:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
-(standard input):70:[15;33mtimestamp: 704  4 is eating  nbr_eating: 4[0m
-(standard input):73:[15;33mtimestamp: 705  2 is eating  nbr_eating: 4[0m
-
+24135 24135 24135 24135 24135 24135 42135 24135 24135 24[15;31mtimestamp: 2800  5 died[0m
+135 
 
 
 4
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
-(standard input):10:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
-(standard input):13:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
-(standard input):19:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
-(standard input):22:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
-(standard input):29:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
-(standard input):34:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
-(standard input):39:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
-(standard input):43:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
-(standard input):50:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
-(standard input):54:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
-(standard input):61:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
-(standard input):64:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
-(standard input):70:[15;33mtimestamp: 703  2 is eating  nbr_eating: 4[0m
-(standard input):73:[15;33mtimestamp: 703  4 is eating  nbr_eating: 4[0m
-
+13425 13425 13245 13245 13245 13245 31245 31245 31425 31[15;31mtimestamp: 2800  1 died[0m
+425 
 
 
 5
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
-(standard input):10:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
-(standard input):14:[15;33mtimestamp: 104  4 is eating  nbr_eating: 1[0m
-(standard input):21:[15;33mtimestamp: 204  3 is eating  nbr_eating: 2[0m
-(standard input):24:[15;33mtimestamp: 204  1 is eating  nbr_eating: 2[0m
-(standard input):30:[15;33mtimestamp: 304  4 is eating  nbr_eating: 2[0m
-(standard input):33:[15;33mtimestamp: 304  2 is eating  nbr_eating: 2[0m
-(standard input):40:[15;33mtimestamp: 404  1 is eating  nbr_eating: 3[0m
-(standard input):44:[15;33mtimestamp: 404  3 is eating  nbr_eating: 3[0m
-(standard input):49:[15;33mtimestamp: 504  4 is eating  nbr_eating: 3[0m
-(standard input):52:[15;33mtimestamp: 504  2 is eating  nbr_eating: 3[0m
-(standard input):61:[15;33mtimestamp: 604  3 is eating  nbr_eating: 4[0m
-(standard input):64:[15;33mtimestamp: 604  1 is eating  nbr_eating: 4[0m
-(standard input):70:[15;33mtimestamp: 704  4 is eating  nbr_eating: 4[0m
-(standard input):74:[15;33mtimestamp: 704  2 is eating  nbr_eating: 4[0m
-
+13245 31245 31245 31245 13245 13245 13245 13245 13245 13[15;31mtimestamp: 2800  1 died[0m
+245 
 
 
 6
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
-(standard input):11:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
-(standard input):13:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
-(standard input):20:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
-(standard input):24:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
-(standard input):29:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
-(standard input):32:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
-(standard input):40:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
-(standard input):43:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
-(standard input):49:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
-(standard input):54:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
-(standard input):61:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
-(standard input):64:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
-(standard input):69:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
-(standard input):73:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
-
+13245 13245 13245 13425 13425 13425 31425 31425 31425 31[15;31mtimestamp: 2800  1 died[0m
+425 
 
 
 7
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
-(standard input):11:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
-(standard input):13:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
-(standard input):21:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
-(standard input):24:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
-(standard input):29:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
-(standard input):32:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
-(standard input):39:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
-(standard input):42:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
-(standard input):50:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
-(standard input):54:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
-(standard input):60:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
-(standard input):63:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
-(standard input):70:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
-(standard input):73:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
-
+13245 13245 31245 13425 13425 13425 13425 13425 13245 13[15;31mtimestamp: 2800  4 died[0m
+425 
 
 
 8
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
-(standard input):11:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
-(standard input):14:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
-(standard input):20:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
-(standard input):24:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
-(standard input):31:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
-(standard input):34:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
-(standard input):40:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
-(standard input):43:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
-(standard input):50:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
-(standard input):54:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
-(standard input):59:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
-(standard input):62:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
-(standard input):69:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
-(standard input):72:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
-
+24135 24135 24135 24135 24315 24315 24135 24135 24135 24[15;31mtimestamp: 2800  1 died[0m
+13
 
 
 9
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 3  3 is eating  nbr_eating: 1[0m
-(standard input):10:[15;33mtimestamp: 103  4 is eating  nbr_eating: 1[0m
-(standard input):14:[15;33mtimestamp: 103  2 is eating  nbr_eating: 1[0m
-(standard input):20:[15;33mtimestamp: 203  3 is eating  nbr_eating: 2[0m
-(standard input):24:[15;33mtimestamp: 203  1 is eating  nbr_eating: 2[0m
-(standard input):30:[15;33mtimestamp: 303  2 is eating  nbr_eating: 2[0m
-(standard input):34:[15;33mtimestamp: 303  4 is eating  nbr_eating: 2[0m
-(standard input):39:[15;33mtimestamp: 403  3 is eating  nbr_eating: 3[0m
-(standard input):42:[15;33mtimestamp: 403  1 is eating  nbr_eating: 3[0m
-(standard input):49:[15;33mtimestamp: 503  4 is eating  nbr_eating: 3[0m
-(standard input):53:[15;33mtimestamp: 503  2 is eating  nbr_eating: 3[0m
-(standard input):60:[15;33mtimestamp: 603  3 is eating  nbr_eating: 4[0m
-(standard input):63:[15;33mtimestamp: 603  1 is eating  nbr_eating: 4[0m
-(standard input):69:[15;33mtimestamp: 703  2 is eating  nbr_eating: 4[0m
-(standard input):72:[15;33mtimestamp: 703  4 is eating  nbr_eating: 4[0m
-
+31425 31425 31425 31425 31425 31425 31245 31245 31245 31[15;31mtimestamp: 2800  1 died[0m
+425 
 
 
 10
 
 
-(standard input):3:[15;33mtimestamp: 1  1 is eating  nbr_eating: 1[0m
-(standard input):6:[15;33mtimestamp: 2  3 is eating  nbr_eating: 1[0m
-(standard input):12:[15;33mtimestamp: 102  4 is eating  nbr_eating: 1[0m
-(standard input):14:[15;33mtimestamp: 102  2 is eating  nbr_eating: 1[0m
-(standard input):19:[15;33mtimestamp: 202  1 is eating  nbr_eating: 2[0m
-(standard input):24:[15;33mtimestamp: 202  3 is eating  nbr_eating: 2[0m
-(standard input):30:[15;33mtimestamp: 302  2 is eating  nbr_eating: 2[0m
-(standard input):34:[15;33mtimestamp: 302  4 is eating  nbr_eating: 2[0m
-(standard input):41:[15;33mtimestamp: 402  1 is eating  nbr_eating: 3[0m
-(standard input):44:[15;33mtimestamp: 402  3 is eating  nbr_eating: 3[0m
-(standard input):49:[15;33mtimestamp: 502  2 is eating  nbr_eating: 3[0m
-(standard input):52:[15;33mtimestamp: 502  4 is eating  nbr_eating: 3[0m
-(standard input):61:[15;33mtimestamp: 602  1 is eating  nbr_eating: 4[0m
-(standard input):64:[15;33mtimestamp: 602  3 is eating  nbr_eating: 4[0m
-(standard input):71:[15;33mtimestamp: 702  4 is eating  nbr_eating: 4[0m
-(standard input):74:[15;33mtimestamp: 702  2 is eating  nbr_eating: 4[0m
-
+13245 13425 13425 13425 13245 13245 31245 31425 31425 31[15;31mtimestamp: 2800  1 died[0m
+24
 
 
 11
 
 
+42135 42135 42135 42135 24135 24135 24135 24135 24135 24[15;31mtimestamp: 2800  1 died[0m
+315 
+
+
+12
+
+
+31245 31245 31425 31425 13425 13425 13425 31425 31245 31[15;31mtimestamp: 2800  3 died[0m
+245 
+
+
+13
+
+
+24315 42315 42135 42315 42315 42315 42315 42315 42315 42[15;31mtimestamp: 2800  1 died[0m
+315 
+
+
+14
+
+
+24135 24135 42135 42315 24315 24315 24315 24135 24135 24[15;31mtimestamp: 2800  5 died[0m
+135 
+
+
+15
+
+
+13425 31425 13425 31425 31425 13425 13425 13425 13425 13[15;31mtimestamp: 2800  5 died[0m
+425 
+
+
+16
+
+
+13245 13245 31245 31245 31245 31245 31245 31425 31425 31[15;31mtimestamp: 2800  1 died[0m
+425 
+
+
+17
+
+
+24315 42315 24135 24135 24135 24135 42135 24135 24135 24[15;31mtimestamp: 2800  5 died[0m
+135 
+
+
+18
+
+
+24315 42315 42315 42315 24315 24315 24315 24315 24315 24[15;31mtimestamp: 2800  4 died[0m
+315 
+
+
+19
+
+
+24135 24135 24135 24135 24135 24135 24135 24135 24135 24[15;31mtimestamp: 2800  2 died[0m
+315 
+
+
+20
+
+
+13245 13245 13245 31425 31425 31425 31425 31425 31425 31[15;31mtimestamp: 2800  2 died[0m
+425 
+
+
+21
+
+
+13245 13245 13245 13245 13245 13245 13245 13245 13425 13[15;31mtimestamp: 2800  3 died[0m
+425 
+
+
+22
+
+
+31425 31425 31245 31245 13245 13245 31245 31245 31245 31[15;31mtimestamp: 2800  5 died[0m
+245 
+
+
+23
+
+
+24135 24135 24135 24135 42315 42315 42315 42135 24135 24[15;31mtimestamp: 2800  5 died[0m
+135 
+
+
+24
+
+
+24315 24315 24315 24315 24315 24315 24315 42315 24315 24[15;31mtimestamp: 2800  5 died[0m
+13
+
+
+25
+
+
+13425 13245 13245 13245 13245 13245 13425 13425 13425 13[15;31mtimestamp: 2800  4 died[0m
+425 
+
+
+26
+
+
+13245 31425 31425 31425 31425 31425 31425 31425 31425 31[15;31mtimestamp: 2800  3 died[0m
+425 
+
+
+27
+
+
+24315 42135 42135 42135 42135 42315 24315 24315 24315 24[15;31mtimestamp: 2800  1 died[0m
+31
+
+
+28
+
+
+24315 24315 42315 42315 42135 24135 42135 42135 42135 42[15;31mtimestamp: 2800  3 died[0m
+13
+
+
+29
+
+
+24135 42135 42135 42315 42315 42315 42315 42135 42135 42[15;31mtimestamp: 2800  1 died[0m
+13
+
+
+30
+
+
+24315 42135 42135 42135 42135 42135 42315 42315 42315 42[15;31mtimestamp: 2800  3 died[0m
+315 
+
+
+31
+
+
+31425 31425 31425 31425 31425 31425 13425 13425 13245 13[15;31mtimestamp: 2800  2 died[0m
+24
+
+
+32
+
+
+24135 42135 24135 24135 24135 24135 24315 24315 42315 42[15;31mtimestamp: 2800  2 died[0m
+315 
+
+
+33
+
+
+24315 24315 42135 42135 42135 42135 42135 42135 42135 42[15;31mtimestamp: 2800  3 died[0m
+135 
+
+
+34
+
+
+31425 13425 13425 13425 13425 13425 13425 13425 13425 13[15;31mtimestamp: 2800  5 died[0m
+425 
+
+
+35
+
+
+13425 13425 13245 13425 13425 13425 31425 31425 31425 31[15;31mtimestamp: 2800  1 died[0m
+425 
+
+
+36
+
+
+13425 13425 13245 13245 13425 31425 31245 31245 31245 13[15;31mtimestamp: 2800  2 died[0m
+245 
+
+
+37
+
+
+13245 13245 31245 31245 31245 31245 31245 31245 31245 31[15;31mtimestamp: 2800  5 died[0m
+245 
+
+
+38
+
+
+31245 31245 13245 31245 31245 31245 31425 31425 31425 31[15;31mtimestamp: 2800  2 died[0m
+42
+
+
+39
+
+
+24315 24315 24315 24315 24315 24315 24135 24135 24135 24[15;31mtimestamp: 2800  5 died[0m
+13
+
+
+40
+
+
+31425 31425 31425 31425 31425 31425 13425 13245 31245 31[15;31mtimestamp: 2800  3 died[0m
+425 
+
+
+41
+
+
+13245 13245 31245 31245 31245 13245 13245 13245 13245 13[15;31mtimestamp: 2800  3 died[0m
+245 
+
+
+42
+
+
+13245 13245 31245 13425 31425 13425 13425 13425 13425 13[15;31mtimestamp: 2800  1 died[0m
+425 
+
+
+43
+
+
+24315 24315 42315 42315 42315 42135 42135 42135 42135 42[15;31mtimestamp: 2800  2 died[0m
+135 
+
+
+44
+
+
+24315 24135 24315 24315 24315 24135 24135 24135 24135 42[15;31mtimestamp: 2800  2 died[0m
+135 
+
+
+45
+
+
+13425 13245 13245 13245 13245 13245 13245 13245 13245 13[15;31mtimestamp: 2800  3 died[0m
+245 
+
+
+46
+
+
+24315 24315 24315 24315 42315 42315 42315 42315 42315 42[15;31mtimestamp: 2800  5 died[0m
+315 
+
+
+47
+
+
+24315 24315 24315 24315 24315 42315 42315 42315 42315 42[15;31mtimestamp: 2800  4 died[0m
+315 
+
+
+48
+
+
+13425 13425 13425 31245 13245 13245 31245 31245 31245 13[15;31mtimestamp: 2800  5 died[0m
+245 
+
+
+49
+
+
+24135 24135 24315 24315 24315 24315 24315 24315 24315 42[15;31mtimestamp: 2800  4 died[0m
+315 
+
+
+50
+
+
+24135 24135 42135 42315 42315 24315 24315 24315 42135 42[15;31mtimestamp: 2800  4 died[0m
+13
+
+
+51
+
+
+24315 24135 24135 24135 42135 24135 24135 24135 24135 24[15;31mtimestamp: 2800  1 died[0m
+135 
+
+
+52
+
+
+24315 24135 24135 24135 24135 24135 24135 24135 24135 42[15;31mtimestamp: 2800  2 died[0m
+135 
+
+
+53
+
+
+13425 13425 13425 13425 31425 31425 31425 31425 31425 31[15;31mtimestamp: 2800  4 died[0m
+425 
+
+
+54
+
+
+13245 13245 13425 13425 13425 31245 31245 31245 31245 31[15;31mtimestamp: 2800  2 died[0m
+245 
+
+
+55
+
+
+24135 24135 24135 24135 24135 24135 24135 24315 24315 24[15;31mtimestamp: 2800  3 died[0m
+315 
+
+
+56
+
+
+24135 42135 42135 42135 42135 42135 42135 42135 42135 42[15;31mtimestamp: 2800  4 died[0m
+135 
+
+
+57
+
+
+24135 24315 24315 24315 24315 24315 24315 42315 42135 42[15;31mtimestamp: 2800  1 died[0m
+13
+
+
+58
+
+
+24315 24135 24135 24135 24135 24135 42135 42135 42135 42[15;31mtimestamp: 2800  1 died[0m
+135 
+
+
+59
+
+
+24315 24135 42135 42135 42135 42135 42135 42135 42135 42[15;31mtimestamp: 2800  2 died[0m
+135 
+
+
+60
+
+
+31425 31425 31425 31425 31425 31425 31425 31425 13245 13[15;31mtimestamp: 2800  5 died[0m
+245 
+
+
+61
+
+
+24315 24315 42135 42135 42315 42315 24315 24315 24135 24[15;31mtimestamp: 2800  2 died[0m
+135 
+
+
+62
+
+
+42135 24135 24135 24135 24315 24315 42315 42315 42315 42[15;31mtimestamp: 2800  5 died[0m
+315 
+
+
+63
+
+
+24315 24315 24135 24135 24135 24315 24315 24315 42135 42[15;31mtimestamp: 2800  3 died[0m
+315 
+
+
+64
+
+
+24315 24315 24315 24315 24135 24135 24135 42135 42135 42[15;31mtimestamp: 2800  1 died[0m
+135 
+
+
+65
+
+
+24315 24315 24315 24315 24315 24135 24315 42315 42315 42[15;31mtimestamp: 2800  2 died[0m
+315 
+
+
+66
+
+
+24315 24315 24315 24135 24135 24135 42135 42135 42135 42[15;31mtimestamp: 2800  5 died[0m
+13
+
+
+67
+
+
+31425 31425 31245 31245 31425 31425 31425 13425 13425 13[15;31mtimestamp: 2800  1 died[0m
+425 
+
+
+68
+
+
+24315 24315 24315 24315 24315 24315 24315 42315 42135 42[15;31mtimestamp: 2800  2 died[0m
+135 
+
+
+69
+
+
+31245 13245 13245 31245 31245 31425 31425 31425 31425 31[15;31mtimestamp: 2801  2 died[0m
+425 
+
+
+70
+
+
+24315 42315 42315 42315 42135 42135 42135 24135 24135 24[15;31mtimestamp: 2800  1 died[0m
+135 
+
+
+71
+
+
+13425 13245 13425 13425 31425 31245 31245 31245 31245 31[15;31mtimestamp: 2800  3 died[0m
+245 
+
+
+72
+
+
+13245 13245 13245 13425 13245 13425 13245 13245 13245 13[15;31mtimestamp: 2800  3 died[0m
+425 
+
+
+73
+
+
+13245 13245 13245 13245 13245 13245 13245 31245 13245 13[15;31mtimestamp: 2800  3 died[0m
+245 
+
+
+74
+
+
+31425 13425 13425 31425 31425 31425 31425 31425 31245 31[15;31mtimestamp: 2800  4 died[0m
+425 
+
+
+75
+
+
+24315 24315 24315 24315 24315 42315 42315 42315 42315 24[15;31mtimestamp: 2800  5 died[0m
+31
+
+
+76
+
+
+24315 24315 24315 42315 42315 42315 42315 42135 42135 42[15;31mtimestamp: 2800  1 died[0m
+135 
+
+
+77
+
+
+24315 42135 42135 42135 42315 42315 42315 42315 42315 24[15;31mtimestamp: 2800  4 died[0m
+315 
+
+
+78
+
+
+13245 31245 31245 31245 31245 31245 31425 31425 31245 31[15;31mtimestamp: 2800  4 died[0m
+245 
+
+
+79
+
+
+24315 24135 24135 24135 24135 24135 24135 24135 24315 24[15;31mtimestamp: 2800  5 died[0m
+315 
+
+
+80
+
+
+24315 24315 24315 42315 42315 42315 24

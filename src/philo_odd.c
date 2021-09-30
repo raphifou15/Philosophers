@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/30 18:43:44 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/30 23:54:08 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,14 @@ void    *routine_odd(void *pa)
 	ft_bzero(p->data->str);
 	pthread_mutex_unlock(&p->data->pr_print);*/
 	
-	pthread_mutex_lock(&p->data->pr_order);
-	if (p->data->order == p->num_philo)
+
+	/*	if (p->data->order == p->num_philo)
+	{
 		pthread_mutex_lock(&p->data->wave_2);
+		
+	}*/
+	pthread_mutex_lock(&p->data->pr_order);
+
 	check = p->data->order % 2;
 	check = (check == 0) ? 1 : 0;
 	pthread_mutex_unlock(&p->data->pr_order);
@@ -97,38 +102,56 @@ void    *routine_odd(void *pa)
 	if (p->data->order2 == p->num_philo)
 		pthread_mutex_lock(&p->data->wave_3);
 */
+	pthread_mutex_lock(&p->data->pr_temp);
+	if (p->data->temp == 0)
+	{
+		pthread_mutex_lock(&p->data->wave_2);
+	}
+	pthread_mutex_unlock(&p->data->pr_temp);
 	while (tmp == 0)
 	{
-		if (p->data->order % 2 == p->num_philo % 2)
+		pthread_mutex_lock(&p->data->pr_temp);
+		if (p->data->temp == 0)
+		{
+			p->data->temp = 1;
+			
+			pthread_mutex_lock(&p->data->wave_3);
+		}
+		pthread_mutex_unlock(&p->data->pr_temp);
+
+
+		if (p->data->order % 2 == p->num_philo % 2 && p->num_philo != p->data->nbr_philo)
 		{
 			pthread_mutex_lock(&p->data->wave_1);
 			pthread_mutex_unlock(&p->data->wave_1);
+
 			pthread_mutex_lock(&p->data->pr_print);
-			str_join(p->data->str, "\e[0;35m wave 1: num philo ");
+			str_join(p->data->str, "\e[0;35m ");
 			ft_itoa(p->num_philo, p->data->str);
 			str_join(p->data->str, "\e[0m");
 			ft_putstr(p->data->str);
 			ft_bzero(p->data->str);
 			pthread_mutex_unlock(&p->data->pr_print);
+			
 			usleep(p->eating * 1000);
 			pthread_mutex_lock(&p->data->pr_tour);
 			p->data->tour++;
-			if (p->data->tour == ((p->data->nbr_philo / 2) + (p->data->nbr_philo % 2)))
+			if (p->data->tour == ((p->data->nbr_philo - 1) / 2))
 			{
 				p->data->tour = 0;
 				pthread_mutex_unlock(&p->data->pr_tour);
-				pthread_mutex_unlock(&p->data->wave_2);
 				pthread_mutex_lock(&p->data->wave_1);
+				pthread_mutex_unlock(&p->data->wave_2);
 			}
 			else
 				pthread_mutex_unlock(&p->data->pr_tour);
 		}
-		else if (p->data->order % 2 != p->num_philo % 2)
+		else if (p->data->order % 2 != p->num_philo % 2 && p->num_philo != p->data->nbr_philo)
 		{
 			pthread_mutex_lock(&p->data->wave_2);
 			pthread_mutex_unlock(&p->data->wave_2);
 			pthread_mutex_lock(&p->data->pr_print);
-			str_join(p->data->str, "\e[0;36m wave 2: num philo ");
+			str_join(p->data->str, "\e[0;36m ");
 			ft_itoa(p->num_philo, p->data->str);
 			str_join(p->data->str, "\e[0m");
 			ft_putstr(p->data->str);
@@ -137,23 +160,38 @@ void    *routine_odd(void *pa)
 			usleep(p->eating * 1000);
 			pthread_mutex_lock(&p->data->pr_tour);
 			p->data->tour++;
-			if (p->data->tour == ((p->data->nbr_philo / 2) + check))
+			if (p->data->tour == ((p->data->nbr_philo - 1) / 2))
 			{
 				p->data->tour = 0;
-				pthread_mutex_unlock(&p->data->pr_tour);
-				
 				pthread_mutex_lock(&p->data->wave_2);
-				pthread_mutex_unlock(&p->data->wave_1);
+				pthread_mutex_unlock(&p->data->wave_3);
+				pthread_mutex_unlock(&p->data->pr_tour);
 			}
 			else
 				pthread_mutex_unlock(&p->data->pr_tour);
+		}
+		else
+		{
+			pthread_mutex_lock(&p->data->wave_3);
+			pthread_mutex_unlock(&p->data->wave_3);
+			pthread_mutex_lock(&p->data->pr_print);
+			str_join(p->data->str, "\e[0;33m ");
+			ft_itoa(p->num_philo, p->data->str);
+			str_join(p->data->str, "\e[0m");
+			ft_putstr(p->data->str);
+			ft_bzero(p->data->str);
+			pthread_mutex_unlock(&p->data->pr_print);
+			usleep(p->eating * 1000);
+			pthread_mutex_lock(&p->data->pr_temp);
+			p->data->temp = 0;
+			pthread_mutex_unlock(&p->data->pr_temp);
+			pthread_mutex_unlock(&p->data->wave_1);
+			
 		}
 		usleep(10000);
 		p->nbr_eat++;
 		pthread_mutex_lock(&p->data->pr_data_die);
 		tmp = p->data->die;
-		if (tmp > 0)
-			pthread_mutex_unlock(&p->data->wave_2);
 		pthread_mutex_unlock(&p->data->pr_data_die);
 	}
     pthread_mutex_lock(&p->data->pr_data_table);
@@ -319,3 +357,85 @@ int philo_odd(t_data_philo *p)
 			p->data->order2 = 0;
 		pthread_mutex_unlock(&p->data->pr_order);*/
 
+/*
+		pthread_mutex_lock(&p->data->pr_temp);
+		if (p->data->temp == 0)
+		{
+			pthread_mutex_lock(&p->data->wave_2);
+			p->data->temp = 1;
+		}
+		pthread_mutex_unlock(&p->data->pr_temp);
+		if (p->data->order % 2 == p->num_philo % 2 && p->num_philo != p->data->nbr_philo)
+		{
+			pthread_mutex_lock(&p->data->wave_1);
+			pthread_mutex_unlock(&p->data->wave_1);
+			pthread_mutex_lock(&p->data->wave_3);
+			pthread_mutex_lock(&p->data->pr_print);
+			str_join(p->data->str, "\e[0;35m ");
+			ft_itoa(p->num_philo, p->data->str);
+			str_join(p->data->str, "\e[0m");
+			ft_putstr(p->data->str);
+			ft_bzero(p->data->str);
+			pthread_mutex_unlock(&p->data->pr_print);
+			usleep(p->eating * 1000);
+			pthread_mutex_lock(&p->data->pr_tour);
+			p->data->tour++;
+			if (p->data->tour == ((p->data->nbr_philo / 2) + (p->data->order % 2)))
+			{
+				p->data->tour = 0;
+				pthread_mutex_unlock(&p->data->pr_tour);
+				pthread_mutex_unlock(&p->data->wave_2);
+				pthread_mutex_lock(&p->data->wave_1);
+			}
+			else
+				pthread_mutex_unlock(&p->data->pr_tour);
+		}
+		else if (p->data->order % 2 != p->num_philo % 2 && p->num_philo != p->data->nbr_philo)
+		{
+			pthread_mutex_lock(&p->data->wave_2);
+			pthread_mutex_unlock(&p->data->wave_2);
+			pthread_mutex_lock(&p->data->pr_print);
+			str_join(p->data->str, "\e[0;36m ");
+			ft_itoa(p->num_philo, p->data->str);
+			str_join(p->data->str, "\e[0m");
+			ft_putstr(p->data->str);
+			ft_bzero(p->data->str);
+			pthread_mutex_unlock(&p->data->pr_print);
+			usleep(p->eating * 1000);
+			pthread_mutex_lock(&p->data->pr_tour);
+			p->data->tour++;
+			if (p->data->tour == ((p->data->nbr_philo / 2) + check))
+			{
+				p->data->tour = 0;
+				pthread_mutex_unlock(&p->data->pr_tour);
+				pthread_mutex_lock(&p->data->wave_2);
+				pthread_mutex_unlock(&p->data->wave_3);
+			}
+			else
+				pthread_mutex_unlock(&p->data->pr_tour);
+		}
+		else
+		{
+			pthread_mutex_lock(&p->data->wave_3);
+			pthread_mutex_unlock(&p->data->wave_3);
+			pthread_mutex_lock(&p->data->pr_print);
+			str_join(p->data->str, "\e[0;33m ");
+			ft_itoa(p->num_philo, p->data->str);
+			str_join(p->data->str, "\e[0m");
+			ft_putstr(p->data->str);
+			ft_bzero(p->data->str);
+			pthread_mutex_unlock(&p->data->pr_print);
+			usleep(p->eating * 1000);
+			pthread_mutex_lock(&p->data->pr_temp);
+			p->data->temp = 0;
+			pthread_mutex_unlock(&p->data->pr_temp);
+			pthread_mutex_unlock(&p->data->wave_1);
+		}
+*/
+
+/*
+
+
+
+
+*/
