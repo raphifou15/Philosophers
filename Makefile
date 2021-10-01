@@ -6,12 +6,12 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/09/30 05:22:49 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/10/01 15:59:17 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -fsanitize=thread
 NAME = philo
 RM = rm -rf
 DIR_OBJ = other
