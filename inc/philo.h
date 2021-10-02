@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/30 20:48:48 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/02 17:06:22 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct s_philo
 	int				nbr_eat;
 	int				die;
 	unsigned long	last_meal;
+	int				first_1;
+	int				first_2;
 	pthread_mutex_t	*left;
 	pthread_mutex_t	*right;
 	pthread_mutex_t	*mutex;
@@ -52,7 +54,9 @@ typedef struct s_data_philo
 	int				order2;
 	int				pivot;
 	int				tour;
+	int				tour2;
 	int				temp;
+
 	t_philo			*philo;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	mutex;
@@ -111,5 +115,16 @@ void				display_sleeping(t_philo *p);
 void				display_thinking(t_philo *p);
 
 int					philo_odd(t_data_philo *p);
+
+void				display_wave_1(t_philo *p);
+void				display_wave_2(t_philo *p);
+void				display_wave_3(t_philo *p);
+
+void				wait_other_finnish(t_philo *p, int x);
+void				change_value_temp1(t_philo *p);
+void				change_value_temp2(t_philo *p);
+void				change_value_temp3(t_philo *p);
+void				increment_tour_1(t_philo *p);
+void				increment_tour_2(t_philo *p);
 
 #endif

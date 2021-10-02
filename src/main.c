@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 20:56:27 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/30 20:49:46 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/02 17:07:37 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,9 @@ int	init_philo_part2(t_data_philo *p)
 	p->order2 = 0;
 	p->pivot = 0;
 	p->tour = 0;
+	p->tour2 = 0;
 	p->temp = 0;
+
 	return (0);
 }
 
@@ -87,6 +89,8 @@ void	init_philo_part3(t_data_philo *p)
 			p->philo[i].have_eating_max = 1;
 		else
 			p->philo[i].have_eating_max = 0;
+		p->philo[i].first_1 = -1;
+		p->philo[i].first_2 = -1;
 		p->philo[i].data = p;
 		p->philo[i].die = 0;
 		p->philo[i].mutex = &p->mutex;
