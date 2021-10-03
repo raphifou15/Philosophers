@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/02 17:06:22 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/03 21:58:24 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,11 +120,16 @@ void				display_wave_1(t_philo *p);
 void				display_wave_2(t_philo *p);
 void				display_wave_3(t_philo *p);
 
-void				wait_other_finnish(t_philo *p, int x);
-void				change_value_temp1(t_philo *p);
-void				change_value_temp2(t_philo *p);
-void				change_value_temp3(t_philo *p);
-void				increment_tour_1(t_philo *p);
-void				increment_tour_2(t_philo *p);
+void				lock_mutex_wave_1(t_philo *p);
+void				unlock_mutex_wave_1(t_philo *p);
+void				find_first_elem(t_philo *p);
+void				find_first_elem2(t_philo *p);
+void				lock_mutex_wave_2(t_philo *p);
+void				unlock_mutex_wave_2(t_philo *p);
+
+void				lock_unlock_mutex_wave_1(t_philo *p);
+void				lock_unlock_mutex_wave_2(t_philo *p);
+void				lock_unlock_mutex_wave_3(t_philo *p);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/02 18:24:58 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/03 22:21:58 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,33 +94,51 @@ void    *routine_odd(void *pa)
 
 	while (tmp == 0)
 	{
+		
 		if (((p->data->order % 2) == (p->num_philo % 2)) && (p->num_philo != p->data->nbr_philo))
-		{	
- 			wait_other_finnish(p, 0); 
+		{
+			lock_mutex_wave_1(p);
 			display_wave_1(p);
 			usleep(p->eating * 1000);
-			change_value_temp1(p);
+			unlock_mutex_wave_1(p);
 		}
+		
 		else if (((p->data->order % 2) != (p->num_philo % 2)) && (p->num_philo != p->data->nbr_philo))
 		{
-			 wait_other_finnish(p, 1);
+			find_first_elem(p);
+			lock_mutex_wave_2(p);
+			lock_unlock_mutex_wave_1(p);
 			display_wave_2(p);
 			usleep(p->eating * 1000);
-			change_value_temp2(p);
+			unlock_mutex_wave_2(p);
 		}
 		else
 		{
-			wait_other_finnish(p, 2);
+			pthread_mutex_lock(&p->data->wave_3);
+			lock_unlock_mutex_wave_1(p);
+			lock_unlock_mutex_wave_2(p);
 			display_wave_3(p);
 			usleep(p->eating * 1000);
-			change_value_temp3(p);
+			lock_unlock_mutex_wave_1(p);
+			pthread_mutex_unlock(&p->data->wave_3);
 		}
-		
 		p->nbr_eat++;
 		usleep(p->eating * 1000);
 		pthread_mutex_lock(&p->data->pr_data_die);
 		tmp = p->data->die;
 		pthread_mutex_unlock(&p->data->pr_data_die);
+		if (((p->data->order % 2) == (p->num_philo % 2)) && (p->num_philo != p->data->nbr_philo))
+		{
+			pthread_mutex_lock(&p->data->pr_temp);
+			lock_unlock_mutex_wave_3(p);
+			pthread_mutex_unlock(&p->data->pr_temp);
+		}
+		if (((p->data->order % 2) != (p->num_philo % 2)) && (p->num_philo != p->data->nbr_philo))
+		{
+			lock_unlock_mutex_wave_3(p);
+			pthread_mutex_lock(&p->data->pr_temp);
+			pthread_mutex_unlock(&p->data->pr_temp);
+		}
 	}
     pthread_mutex_lock(&p->data->pr_data_table);
 	p->data->table--;

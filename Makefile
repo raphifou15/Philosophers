@@ -6,12 +6,12 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/10/02 18:27:53 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/10/03 19:31:42 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -fsanitize=thread
+FLAGS = -Wall -Wextra -Werror
 NAME = philo
 RM = rm -rf
 DIR_OBJ = other
@@ -31,7 +31,7 @@ SRCS = 	main.c \
 		philo_pair.c \
 		display.c\
 		display2.c\
-		loop.c\
+		lock_mutex.c\
 		philo_odd.c
 
 OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
@@ -41,11 +41,11 @@ OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
 all:${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} ${FLAGS} ${OBJS} -o ${NAME}
+	${CC} ${FLAGS} ${OBJS} -o ${NAME} -lpthread
 
 ${DIR_OBJ}/%.o: ${DIR_SRC}/%.c
 	[ -d $(DIR_OBJ) ] || mkdir -p $(DIR_OBJ)
-	${CC} $(FLAGS) -I ${DIR_INC} -c $< -o $@
+	${CC} $(FLAGS) -I ${DIR_INC} -c $< -o $@ -lpthread
 
 clean:
 	${RM} ${OBJS}
