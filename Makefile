@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/10/04 05:48:27 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/10/04 21:22:52 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SRCS = 	main.c \
 		display.c\
 		display2.c\
 		lock_mutex.c\
-		philo_odd.c
+		philo_odd.c\
+		philo_odd_routine.c
 
 OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
 

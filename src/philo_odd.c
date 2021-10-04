@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/04 19:35:38 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 01:53:26 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,15 @@ void    *routine_odd(void *pa)
     
 	p = (t_philo *)pa;
     tmp = p->data->die;
-	
+
 	pthread_mutex_lock(&p->data->pr_time);
 	p->last_meal = time_now();
 	pthread_mutex_unlock(&p->data->pr_time);
 	pthread_mutex_lock(&p->data->wait_all);
 	pthread_mutex_unlock(&p->data->wait_all);
 	
-
 	pthread_mutex_lock(&p->data->pr_order);
 	pthread_mutex_unlock(&p->data->pr_order);
-
-	
 
 	
 	pthread_mutex_lock(&p->data->pr_order);
@@ -49,11 +46,6 @@ void    *routine_odd(void *pa)
 		if (p->data->order == 0 && p->num_philo == p->data->nbr_philo)
 		{
 			p->data->pivot = 1;
-			pthread_mutex_lock(&p->data->pr_print);
-			str_join(p->data->str, "lala\n");
-			ft_putstr(p->data->str);
-			ft_bzero(p->data->str);
-			pthread_mutex_unlock(&p->data->pr_print);
 		}
 		if (p->data->order == 0 && p->data->pivot == 0)
 			p->data->order = p->num_philo;
@@ -74,19 +66,8 @@ void    *routine_odd(void *pa)
 	}
 	
 
-
-	
-	//Savoir si le p->num_philo == p->data->order et != p->data->nbr_philo
-	/*pthread_mutex_lock(&p->data->pr_print);
-	ft_itoa(p->data->order, p->data->str);
-	str_join(p->data->str, " \e[0;33m num du philo ");
-	ft_itoa(p->num_philo, p->data->str);
-	str_join(p->data->str, "\e[0m");
-	ft_putstr(p->data->str);
-	ft_bzero(p->data->str);
-	pthread_mutex_unlock(&p->data->pr_print);*/
 	if (p->num_philo == p->data->nbr_philo)
-		usleep(1);
+		usleep(5);
 	while (tmp == 0)
 	{			
 		if (p->nbr_eat > 0)
@@ -112,8 +93,18 @@ void    *routine_odd(void *pa)
 		if (((p->data->order % 2) == (p->num_philo % 2)) && (p->num_philo != p->data->nbr_philo))
 		{
 			lock_mutex_wave_1(p);
-			display_wave_1(p);
+			// Mettre le code output
+			take_fork_and_display(p);
+			//p->last_meal = time_now();
+			pthread_mutex_lock(&p->data->pr_time);
+			p->last_meal = time_now();
+			pthread_mutex_unlock(&p->data->pr_time);
+			display_eating_odd(p);
+			// Mettre le code output
+			//display_wave_1(p);
 			usleep(p->eating * 1000);
+			pthread_mutex_unlock(p->right);
+			pthread_mutex_unlock(p->left);
 			unlock_mutex_wave_1(p);
 		}
 		else if (((p->data->order % 2) != (p->num_philo % 2)) && (p->num_philo != p->data->nbr_philo))
@@ -123,8 +114,19 @@ void    *routine_odd(void *pa)
 			pthread_mutex_unlock(&p->data->pr_temp);
 			lock_mutex_wave_2(p);
 			lock_unlock_mutex_wave_1(p);
-			display_wave_2(p);
+			// Mettre le code output
+			//take_fork_and_display(p);
+			pthread_mutex_lock(p->right);
+			pthread_mutex_lock(p->left);
+			pthread_mutex_lock(&p->data->pr_time);
+			p->last_meal = time_now();
+			pthread_mutex_unlock(&p->data->pr_time);
+			display_eating_odd(p);
+			// Mettre le code output
+			//display_wave_2(p);
 			usleep(p->eating * 1000);
+			pthread_mutex_unlock(p->left);
+			pthread_mutex_unlock(p->right);
 			unlock_mutex_wave_2(p);
 		}
 		else
@@ -132,12 +134,23 @@ void    *routine_odd(void *pa)
 			pthread_mutex_lock(&p->data->wave_3);
 			lock_unlock_mutex_wave_2(p);
 			lock_unlock_mutex_wave_1(p);
-			display_wave_3(p);
+			// Mettre le code output
+			take_fork_and_display2(p);
+			pthread_mutex_lock(&p->data->pr_time);
+			p->last_meal = time_now();
+			pthread_mutex_unlock(&p->data->pr_time);
+			display_eating_odd(p);
+			// Mettre le code output
+			//display_wave_3(p);
 			usleep(p->eating * 1000);
+			pthread_mutex_unlock(p->right);
+			pthread_mutex_unlock(p->left);
 			pthread_mutex_unlock(&p->data->wave_3);
 		}
 		p->nbr_eat++;
-		usleep(p->eating * 1000);
+		display_sleeping_odd(p);
+		usleep(p->sleeping * 1000);
+		display_thinking_odd(p);
 		pthread_mutex_lock(&p->data->pr_data_die);
 		tmp = p->data->die;
 		pthread_mutex_unlock(&p->data->pr_data_die);
@@ -150,20 +163,16 @@ void    *routine_odd(void *pa)
 
 
 
-
-
-
 int	die_philo_odd(t_data_philo *p, int stop_check)
 {
 	int	i;
 	unsigned long time;
-	//int				eat;
+	int				eat;
 
-	//eat = 0;
+	eat = 0;
 	i = -1;
 	if (stop_check > 0)
 		return (1);
-	
 	while (++i < p->nbr_philo)
 	{
 		time = time_now();
@@ -186,17 +195,17 @@ int	die_philo_odd(t_data_philo *p, int stop_check)
 			pthread_mutex_unlock(&p->pr_print);
 			return (1);
 		}
+		if (p->philo[i].have_eating_max == 1)
+			eat++;
 		pthread_mutex_unlock(&p->pr_time);
-		//if (p->philo[i].have_eating_max == 1)
-		//	eat++;
     }
-    /*if (eat == p->nbr_philo)
+    if (eat == p->nbr_philo)
 	{
-		pthread_mutex_lock(&p->pr_data);
+		pthread_mutex_lock(&p->pr_data_die);
 	    p->die = 1;
-		pthread_mutex_unlock(&p->pr_data);
+		pthread_mutex_unlock(&p->pr_data_die);
 	    return (1);
-    }*/
+    }
     return (0);
 }
 
