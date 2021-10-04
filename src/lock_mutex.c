@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 19:23:13 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/04 06:44:21 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/04 18:49:39 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	unlock_mutex_wave_1(t_philo *p)
 	if (p->num_philo == p->data->order)
 	{
 		pthread_mutex_unlock(&p->data->pr_order);
-		pthread_mutex_unlock(&p->data->wave_1);
 		if (p->nbr_eat > 0)
 			pthread_mutex_unlock(&p->data->pr_temp);
+		pthread_mutex_unlock(&p->data->wave_1);
 	}
 	else
 		pthread_mutex_unlock(&p->data->pr_order);
@@ -92,9 +92,9 @@ void    unlock_mutex_wave_2(t_philo *p)
 	if (p->data->order2 == p->num_philo)
 	{	
 		pthread_mutex_unlock(&p->data->pr_order);
-		pthread_mutex_lock(&p->data->pr_tour);
+		/*pthread_mutex_lock(&p->data->pr_tour);
 		p->data->tour = 0;
-		pthread_mutex_unlock(&p->data->pr_tour);
+		pthread_mutex_unlock(&p->data->pr_tour);*/
 		pthread_mutex_unlock(&p->data->wave_2);
 	}
 	else
