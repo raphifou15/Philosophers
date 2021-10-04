@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/04 19:11:35 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/04 19:35:38 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,12 +119,9 @@ void    *routine_odd(void *pa)
 		else if (((p->data->order % 2) != (p->num_philo % 2)) && (p->num_philo != p->data->nbr_philo))
 		{
 			find_first_elem(p);
+			pthread_mutex_lock(&p->data->pr_temp);
+			pthread_mutex_unlock(&p->data->pr_temp);
 			lock_mutex_wave_2(p);
-			if (p->data->order2 != p->num_philo)
-			{
-				pthread_mutex_lock(&p->data->pr_temp);
-				pthread_mutex_unlock(&p->data->pr_temp);
-			}
 			lock_unlock_mutex_wave_1(p);
 			display_wave_2(p);
 			usleep(p->eating * 1000);
