@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 19:23:13 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/04 19:32:46 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/04 20:05:02 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	lock_mutex_wave_1(t_philo *p)
 	if (p->num_philo == p->data->order)
 	{
 		pthread_mutex_unlock(&p->data->pr_order);
+		pthread_mutex_lock(&p->data->wave_1);
 		if (p->nbr_eat > 0)
 			pthread_mutex_unlock(&p->data->pr_temp);
-		pthread_mutex_lock(&p->data->wave_1);
 	}
 	else
 		pthread_mutex_unlock(&p->data->pr_order);
