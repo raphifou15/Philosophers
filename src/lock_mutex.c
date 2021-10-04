@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 19:23:13 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/03 21:57:57 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/04 01:10:53 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	unlock_mutex_wave_1(t_philo *p)
 	{
 		pthread_mutex_unlock(&p->data->pr_order);
 		pthread_mutex_unlock(&p->data->wave_1);
+		if (p->nbr_eat > 0)
+			pthread_mutex_unlock(&p->data->pr_temp);
 	}
 	else
 		pthread_mutex_unlock(&p->data->pr_order);
