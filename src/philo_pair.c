@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 00:28:07 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/28 01:02:10 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 03:13:33 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 void	ft_time(t_philo *p, unsigned long time_to_do)
 {
 	unsigned long	time;
+	unsigned long	time2;
 
+	(void)p;
+	time2 = time_now();
 	usleep(((time_to_do * 1000) / 5) * 4);
 	time = time_now();
-	while (time_to_do > time - p->last_meal)
+	while (time_to_do > time - time2)
 	{
 		usleep(100);
 		time = time_now();

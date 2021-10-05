@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 00:22:10 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 02:09:54 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,7 @@ void				display_eating_odd(t_philo *p);
 void				display_sleeping_odd(t_philo *p);
 void				display_thinking_odd(t_philo *p);
 void				take_fork_and_display2(t_philo *p);
+
+void				ft_time(t_philo *p, unsigned long time_to_do);
 
 #endif

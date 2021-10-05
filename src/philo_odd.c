@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 01:53:26 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 03:19:00 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void    *routine_odd(void *pa)
 			display_eating_odd(p);
 			// Mettre le code output
 			//display_wave_1(p);
-			usleep(p->eating * 1000);
+			ft_time(p, p->eating);
 			pthread_mutex_unlock(p->right);
 			pthread_mutex_unlock(p->left);
 			unlock_mutex_wave_1(p);
@@ -124,7 +124,7 @@ void    *routine_odd(void *pa)
 			display_eating_odd(p);
 			// Mettre le code output
 			//display_wave_2(p);
-			usleep(p->eating * 1000);
+			ft_time(p, p->eating);
 			pthread_mutex_unlock(p->left);
 			pthread_mutex_unlock(p->right);
 			unlock_mutex_wave_2(p);
@@ -142,14 +142,14 @@ void    *routine_odd(void *pa)
 			display_eating_odd(p);
 			// Mettre le code output
 			//display_wave_3(p);
-			usleep(p->eating * 1000);
+			ft_time(p, p->eating);
 			pthread_mutex_unlock(p->right);
 			pthread_mutex_unlock(p->left);
 			pthread_mutex_unlock(&p->data->wave_3);
 		}
 		p->nbr_eat++;
 		display_sleeping_odd(p);
-		usleep(p->sleeping * 1000);
+		ft_time(p, p->sleeping);
 		display_thinking_odd(p);
 		pthread_mutex_lock(&p->data->pr_data_die);
 		tmp = p->data->die;
@@ -238,6 +238,7 @@ int philo_odd(t_data_philo *p)
 		pthread_mutex_unlock(&p->pr_data_table);
 		if (die_philo_odd(p, tmp2) == 1)
 			tmp2 = 2;
+		usleep(100);
 	}
 
     i = -1;
