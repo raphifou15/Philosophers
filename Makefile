@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/10/05 03:31:12 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/10/05 04:14:38 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRCS = 	main.c \
 		error.c \
 		utilities.c \
 		ft_free.c \
-		ft_check.c \
 		routine.c \
 		next.c \
 		itoa.c \

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 03:34:57 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 04:08:15 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,9 +116,6 @@ void				display_thinking(t_philo *p);
 
 int					philo_odd(t_data_philo *p);
 
-void				display_wave_1(t_philo *p);
-void				display_wave_2(t_philo *p);
-void				display_wave_3(t_philo *p);
 
 void				lock_mutex_wave_1(t_philo *p);
 void				unlock_mutex_wave_1(t_philo *p);
