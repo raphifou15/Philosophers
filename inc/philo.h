@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 18:29:00 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 20:00:48 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,5 +142,8 @@ void				ft_time(t_philo *p, unsigned long time_to_do);
 void				display_die_odd(t_data_philo *p, unsigned long time, int i);
 
 void				*routine_odd(void *pa);
+void				wait_elem_routine(t_philo *p);
+
+void				loop_odd(t_philo *p);
 
 #endif

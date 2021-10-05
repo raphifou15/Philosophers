@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/10/05 18:37:05 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/10/05 19:49:00 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,16 +34,18 @@ SRCS = 	main.c \
 		lock_unlock.c\
 		find_first_elem.c\
 		philo_odd.c\
-		philo_odd_routine.c
+		philo_odd_routine.c\
+		wait_elem_routine.c\
+		loop_odd.c
 
 OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o} 
+	${CC} ${FLAGS} -c $< -o ${<:.c=.o} -lpthread
 all:${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} ${FLAGS} ${OBJS} -o ${NAME}
+	${CC} ${FLAGS} ${OBJS} -o ${NAME} -lpthread
 
 ${DIR_OBJ}/%.o: ${DIR_SRC}/%.c
 	[ -d $(DIR_OBJ) ] || mkdir -p $(DIR_OBJ)
