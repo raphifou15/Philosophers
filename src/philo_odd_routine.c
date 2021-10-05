@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 21:24:09 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 18:26:37 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 18:51:03 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,15 @@ void	*routine_odd(void *pa)
 			pthread_mutex_unlock(&p->data->pr_order);
 		}
 	}
+	pthread_mutex_lock(&p->data->pr_order);
+	if ((p->num_philo % 2) != (p->data->order %2))
+	{
+		pthread_mutex_unlock(&p->data->pr_order);
+		usleep(50);
+	}
+	else
+		pthread_mutex_unlock(&p->data->pr_order);
+	
 	pthread_mutex_lock(&p->data->pr_order);
 	if (p->num_philo == p->data->nbr_philo)
 	{

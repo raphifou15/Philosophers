@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 18:29:48 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 18:55:22 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	philo_odd_2(t_data_philo *p, int tmp, int tmp2)
 		pthread_mutex_unlock(&p->pr_data_table);
 		if (die_philo_odd(p, tmp2) == 1)
 			tmp2 = 2;
-		usleep(100);
+		usleep(1);
 	}
 	while (++i < p->nbr_philo)
 		pthread_join(p->philo[i].th, NULL);
