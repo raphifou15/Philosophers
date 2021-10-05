@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/10/05 04:14:38 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/10/05 05:30:33 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ SRCS = 	main.c \
 		display.c\
 		display2.c\
 		lock_mutex.c\
+		lock_unlock.c\
+		find_first_elem.c\
 		philo_odd.c\
 		philo_odd_routine.c
 
