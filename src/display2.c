@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:24:18 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 01:36:22 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 03:55:25 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@ void	display_eating_odd(t_philo *p)
 		return ;
 	}
 	pthread_mutex_unlock(&p->data->pr_data_die);
-	pthread_mutex_lock(&p->data->mutex);
+	pthread_mutex_lock(&p->data->pr_time);
 	if (p->nbr_eat + 1 == p->data->t_philo_must_eat)
 		p->have_eating_max = 1;
-	pthread_mutex_unlock(&p->data->mutex);
+	pthread_mutex_unlock(&p->data->pr_time);
     pthread_mutex_lock(&p->data->pr_print);
 	str_join(p->data->str, "\e[15;33mtimestamp: ");
 	ft_itoa(time - p->data->time_begin, p->data->str);

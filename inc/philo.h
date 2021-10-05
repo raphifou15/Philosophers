@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 02:09:54 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 03:34:57 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_data_philo
 	int				t_sleep;
 	int				t_philo_must_eat;
 	signed long		time_begin;
-	char			str[80];
+	char			str[200];
 	int				order;
 	int				order2;
 	int				pivot;

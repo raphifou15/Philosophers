@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:35:53 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 03:19:00 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 04:01:18 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void    *routine_odd(void *pa)
 	
 
 	if (p->num_philo == p->data->nbr_philo)
-		usleep(5);
+		usleep(50);
 	while (tmp == 0)
 	{			
 		if (p->nbr_eat > 0)
@@ -95,7 +95,6 @@ void    *routine_odd(void *pa)
 			lock_mutex_wave_1(p);
 			// Mettre le code output
 			take_fork_and_display(p);
-			//p->last_meal = time_now();
 			pthread_mutex_lock(&p->data->pr_time);
 			p->last_meal = time_now();
 			pthread_mutex_unlock(&p->data->pr_time);
