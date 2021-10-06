@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 04:33:17 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/06 05:57:26 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/06 17:20:27 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	wave_1(t_philo *p)
 
 void	wave_2(t_philo *p)
 {
+	find_first_elem(p);
 	lock_mutex_wave_2(p);
 	lock_unlock_mutex_wave_1(p);
 	take_fork_and_display2(p);
