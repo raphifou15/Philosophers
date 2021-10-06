@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 00:28:07 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 23:56:02 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/06 03:48:03 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	philo_pair(t_data_philo *p, int i)
 	{
 		pthread_create(&p->philo[i].th, NULL, routine_philo_pair,
 			(void *)&p->philo[i]);
-		usleep(10);
+		usleep(1);
 	}
 	philo_pair_2(p, tmp, tmp2);
 	return (0);

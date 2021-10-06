@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 19:15:11 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/06 03:07:01 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/06 03:39:41 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,19 @@ void	wait_elem_pivot_0(t_philo *p)
 void	wait_elem_routine_2(t_philo *p)
 {
 	pthread_mutex_lock(&p->data->pr_order);
-	if ((p->num_philo % 2) != (p->data->order % 2))
-	{
-		pthread_mutex_unlock(&p->data->pr_order);
-		usleep(50);
-	}
-	else
-		pthread_mutex_unlock(&p->data->pr_order);
-	pthread_mutex_lock(&p->data->pr_order);
 	if (p->num_philo == p->data->nbr_philo)
 	{
 		pthread_mutex_unlock(&p->data->pr_order);
 		usleep(300);
+	}
+	else
+		pthread_mutex_unlock(&p->data->pr_order);
+	
+	pthread_mutex_lock(&p->data->pr_order);
+	if ((p->num_philo % 2) != (p->data->order % 2))
+	{
+		pthread_mutex_unlock(&p->data->pr_order);
+		usleep(50);
 	}
 	else
 		pthread_mutex_unlock(&p->data->pr_order);
@@ -75,4 +76,5 @@ void	wait_elem_routine(t_philo *p)
 	}
 	else
 		wait_elem_pivot_0(p);
+	wait_elem_routine_2(p);
 }
