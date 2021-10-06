@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/06 03:21:42 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/06 05:58:58 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,5 +143,11 @@ void				loop_odd(t_philo *p);
 int					display_die_pair(t_data_philo *p, int i,
 						unsigned long time);
 
+int					philo_pair2(t_data_philo *p);
+
 void				*routine_philo_pair(void *pa);
+void				*routine_pair2(void *pa);
+void				lock_mutex_wave_1_pair2(t_philo *p);
+void				wait_elem_routine_pair2(t_philo *p);
+
 #endif

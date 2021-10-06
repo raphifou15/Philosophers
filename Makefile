@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/12 02:02:11 by rkhelif           #+#    #+#              #
-#    Updated: 2021/10/05 19:49:00 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/10/06 05:22:36 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,16 +27,19 @@ SRCS = 	main.c \
 		itoa.c \
 		one_philo.c \
 		philo_pair.c \
+		philo_pair2.c \
 		display.c\
 		display2.c\
 		display3.c\
 		lock_mutex.c\
+		lock_mutex2.c\
 		lock_unlock.c\
 		find_first_elem.c\
 		philo_odd.c\
 		philo_odd_routine.c\
 		wait_elem_routine.c\
-		loop_odd.c
+		loop_odd.c\
+		routine_pair2.c
 
 OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}
 

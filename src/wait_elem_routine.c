@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 19:15:11 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/06 03:39:41 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/06 05:58:21 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	wait_elem_routine_2(t_philo *p)
 	}
 	else
 		pthread_mutex_unlock(&p->data->pr_order);
-	
 	pthread_mutex_lock(&p->data->pr_order);
 	if ((p->num_philo % 2) != (p->data->order % 2))
 	{
@@ -77,4 +76,17 @@ void	wait_elem_routine(t_philo *p)
 	else
 		wait_elem_pivot_0(p);
 	wait_elem_routine_2(p);
+}
+
+void	wait_elem_routine_pair2(t_philo *p)
+{
+	pthread_mutex_lock(&p->data->pr_order);
+	if (p->data->order == 0)
+		p->data->order = p->num_philo;
+	if (p->data->order2 == 0 && p->data->order != 0
+		&& (p->num_philo % 2) != (p->data->order % 2))
+		p->data->order2 = p->num_philo;
+	pthread_mutex_unlock(&p->data->pr_order);
+	pthread_mutex_lock(&p->data->wait_all);
+	pthread_mutex_unlock(&p->data->wait_all);
 }

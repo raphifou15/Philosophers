@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   loop_odd.c                                         :+:      :+:    :+:   */
+/*   routine_pair2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 19:49:49 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/06 05:30:27 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/10/06 04:33:17 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/10/06 05:57:26 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	even_odd(t_philo *p)
+void	wave_1(t_philo *p)
 {
-	lock_mutex_wave_1(p);
+	lock_mutex_wave_1_pair2(p);
 	take_fork_and_display(p);
 	pthread_mutex_lock(&p->data->pr_time);
 	p->last_meal = time_now();
@@ -26,11 +26,8 @@ void	even_odd(t_philo *p)
 	unlock_mutex_wave_1(p);
 }
 
-void	odd_odd(t_philo *p)
+void	wave_2(t_philo *p)
 {
-	find_first_elem(p);
-	pthread_mutex_lock(&p->data->pr_temp);
-	pthread_mutex_unlock(&p->data->pr_temp);
 	lock_mutex_wave_2(p);
 	lock_unlock_mutex_wave_1(p);
 	take_fork_and_display2(p);
@@ -44,34 +41,38 @@ void	odd_odd(t_philo *p)
 	unlock_mutex_wave_2(p);
 }
 
-void	other_odd(t_philo *p)
+void	loop_pair2(t_philo *p)
 {
-	pthread_mutex_lock(&p->data->wave_3);
-	lock_unlock_mutex_wave_2(p);
-	lock_unlock_mutex_wave_1(p);
-	take_fork_and_display2(p);
-	pthread_mutex_lock(&p->data->pr_time);
-	p->last_meal = time_now();
-	pthread_mutex_unlock(&p->data->pr_time);
-	display_eating_odd(p);
-	ft_time(p, p->eating);
-	pthread_mutex_unlock(p->right);
-	pthread_mutex_unlock(p->left);
-	pthread_mutex_unlock(&p->data->wave_3);
-}
-
-void	loop_odd(t_philo *p)
-{
-	if (((p->data->order % 2) == (p->num_philo % 2))
-		&& (p->num_philo != p->data->nbr_philo))
-		even_odd(p);
-	else if (((p->data->order % 2) != (p->num_philo % 2))
-		&& (p->num_philo != p->data->nbr_philo))
-		odd_odd(p);
+	if ((p->data->order % 2) == (p->num_philo % 2))
+		wave_1(p);
 	else
-		other_odd(p);
+		wave_2(p);
 	p->nbr_eat++;
 	display_sleeping_odd(p);
 	ft_time(p, p->sleeping);
 	display_thinking_odd(p);
+}
+
+void	*routine_pair2(void *pa)
+{
+	t_philo	*p;
+	int		tmp;
+
+	p = (t_philo *)pa;
+	tmp = p->data->die;
+	pthread_mutex_lock(&p->data->pr_time);
+	p->last_meal = time_now();
+	pthread_mutex_unlock(&p->data->pr_time);
+	wait_elem_routine_pair2(p);
+	while (tmp == 0)
+	{
+		loop_pair2(p);
+		pthread_mutex_lock(&p->data->pr_data_die);
+		tmp = p->data->die;
+		pthread_mutex_unlock(&p->data->pr_data_die);
+	}
+	pthread_mutex_lock(&p->data->pr_data_table);
+	p->data->table--;
+	pthread_mutex_unlock(&p->data->pr_data_table);
+	return (NULL);
 }
