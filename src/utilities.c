@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 03:44:24 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/28 16:40:11 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/06 02:44:18 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,10 @@ unsigned long	time_now(void)
 
 void	ft_putstr(char *str)
 {
-	int	i = -1;
+	int	i;
 
+	i = -1;
 	while (str[++i] != '\0')
 		;
 	write(1, str, i);
-}
-
-void	ft_putnbr_unsigned_long(unsigned long n)
-{
-	(n > 9) ? ft_putnbr_unsigned_long(n / 10) : ft_putchar(n + 48);
-	(n > 9) ? ft_putchar((n % 10) + 48) : 0;
 }

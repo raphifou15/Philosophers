@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:35:39 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 17:51:26 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/05 23:54:11 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,17 @@ void	display_die_odd(t_data_philo *p, unsigned long time, int i)
 	ft_putstr(p->str);
 	ft_bzero(p->str);
 	pthread_mutex_unlock(&p->pr_print);
+}
+
+int	display_die_pair(t_data_philo *p, int i, unsigned long time)
+{
+	p->die = 1;
+	str_join(p->str, "\e[15;31mtimestamp: ");
+	ft_itoa(time - p->time_begin, p->str);
+	str_join(p->str, "  ");
+	ft_itoa(p->philo[i].num_philo, p->str);
+	str_join(p->str, " died\e[0m\n");
+	ft_putstr(p->str);
+	ft_bzero(p->str);
+	return (1);
 }

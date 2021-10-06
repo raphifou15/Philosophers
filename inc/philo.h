@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 02:07:19 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/10/05 20:00:48 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/10/06 03:21:42 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,24 +56,20 @@ typedef struct s_data_philo
 	int				tour;
 	int				tour2;
 	int				temp;
-
 	t_philo			*philo;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	mutex;
-	
 	pthread_mutex_t	pr_data_die;
 	pthread_mutex_t	pr_data_table;
 	pthread_mutex_t	pr_print;
 	pthread_mutex_t	wait_all;
 	pthread_mutex_t	pr_time;
 	pthread_mutex_t	pr_order;
-
 	pthread_mutex_t	block_last_elem;
 	pthread_mutex_t	wave_1;
 	pthread_mutex_t	wave_2;
 	pthread_mutex_t	wave_3;
 	pthread_mutex_t	pr_temp;
-	
 	pthread_mutex_t	pr_tour;
 }					t_data_philo;
 
@@ -117,7 +113,6 @@ void				display_thinking(t_philo *p);
 
 int					philo_odd(t_data_philo *p);
 
-
 void				lock_mutex_wave_1(t_philo *p);
 void				unlock_mutex_wave_1(t_philo *p);
 void				find_first_elem(t_philo *p);
@@ -145,5 +140,8 @@ void				*routine_odd(void *pa);
 void				wait_elem_routine(t_philo *p);
 
 void				loop_odd(t_philo *p);
+int					display_die_pair(t_data_philo *p, int i,
+						unsigned long time);
 
+void				*routine_philo_pair(void *pa);
 #endif
